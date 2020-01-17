@@ -60,7 +60,7 @@ export default () => {
               the prompt and focused on interactively telling the whole story of
               a song.
             </p>
-            <p className="VideoWrapper">
+            <p className="MediaWrapper">
               <div style={{ padding: '61.02% 0 0 0', position: 'relative' }}>
                 <iframe
                   src="https://player.vimeo.com/video/225468485?color=eee&byline=0&portrait=0"
@@ -82,7 +82,7 @@ export default () => {
               shards. Each piece represented an element of the song, whether
               that be the guitar part or the person who mastered the track.
             </p>
-            <p className="VideoWrapper">
+            <p className="MediaWrapper">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
                   src="https://player.vimeo.com/video/227336595?color=eee&byline=0&portrait=0"

@@ -31,7 +31,7 @@ export default props => {
                   <div className="ProjectPage__Links">
                     {links.map(({ label, href }, i) => (
                       <a key={label} href={href} target="blank">
-                        {label} {i < links.length - 1 && '/ '}
+                        {label} -> <br />
                       </a>
                     ))}
                   </div>

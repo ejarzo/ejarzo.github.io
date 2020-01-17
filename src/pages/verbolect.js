@@ -1,13 +1,35 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 export default () => {
-  const { bannerImage } = useStaticQuery(graphql`
+  const { bannerImage, image1, image2, image3 } = useStaticQuery(graphql`
     query {
       bannerImage: file(relativePath: { eq: "verbolect-banner.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image1: file(relativePath: { eq: "verbolect1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image2: file(relativePath: { eq: "verbolect2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1800) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image3: file(relativePath: { eq: "verbolect4.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1800) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -58,6 +80,10 @@ export default () => {
               way, the project is as much an exploration of human tendencies as
               it is of artificial intelligence.
             </p>
+            <p className="MediaWrapper">
+              <Img fluid={image2.childImageSharp.fluid} />
+            </p>
+
             <p>
               The installation, which allows you to see and hear the
               conversation, ran continuously from October 20 to November 19,
@@ -70,11 +96,15 @@ export default () => {
               </a>{' '}
               in Brooklyn.
             </p>
+            <p className="MediaWrapper">
+              <Img fluid={image1.childImageSharp.fluid} />
+            </p>
+
             <p>
               Below is one of the many streams that were recorded during the
               exhibition.
             </p>
-            <p className="VideoWrapper">
+            <p className="MediaWrapper">
               <div
                 style={{
                   padding: '56.25% 0 0 0',
@@ -120,6 +150,9 @@ export default () => {
                 NonCoreProjector
               </a>
               .
+            </p>
+            <p className="MediaWrapper">
+              <Img fluid={image3.childImageSharp.fluid} />
             </p>
             <p>
               <strong>My Role: </strong>I implemented the projection, which

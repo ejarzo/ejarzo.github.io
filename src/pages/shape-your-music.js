@@ -58,7 +58,7 @@ export default () => {
                 Try it yourself!
               </a>
             </p>
-            <p className="VideoWrapper">
+            <p className="MediaWrapper">
               <Img
                 backgroundColor={'none'}
                 fluid={screenshotImage.childImageSharp.fluid}
@@ -106,7 +106,7 @@ export default () => {
               loop starts again.
             </p>
             <p>To demonstrate, here is the Star Wars Theme in shape form:</p>
-            <p className="VideoWrapper">
+            <p className="MediaWrapper">
               <video controls style={{ width: '100%' }}>
                 <source src={starWarsVideo} type="video/mp4" />
               </video>

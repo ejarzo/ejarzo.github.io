@@ -59,7 +59,7 @@ video {
   display: block;
 }
 
-.VideoWrapper {
+.MediaWrapper {
   box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.2);
   margin: 70px;
 }
@@ -87,19 +87,25 @@ video {
 }
 
 .ProjectPage__Title {
-  font-size: 3em;
+  font-size: 4em;
   background: var(--black);
   color: var(--white);
 }
 
 .ProjectPage__Links {
-  background: var(--black);
+  /* background: var(--black);
   display: inline-block;
-  margin-top: 2px;
+  margin-top: 2px; */
 }
 
 .ProjectPage__Links a {
   background: var(--black);
   color: var(--white);
   text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+  .MediaWrapper {
+    margin: 20px 0;
+  }
 }

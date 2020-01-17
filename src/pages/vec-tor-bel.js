@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 export default () => {
   const { bannerImage } = useStaticQuery(graphql`
     query {
-      bannerImage: file(relativePath: { eq: "vectorbel-banner.jpg" }) {
+      bannerImage: file(relativePath: { eq: "vec-tor-bel-banner.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
@@ -14,6 +14,7 @@ export default () => {
       }
     }
   `);
+
   return (
     <div>
       <ProjectPage
@@ -30,7 +31,7 @@ export default () => {
         ]}
         Content={() => (
           <div>
-            <div>
+            <p className="MediaWrapper">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
                   src="https://player.vimeo.com/video/302939221?color=eee"
@@ -46,7 +47,7 @@ export default () => {
                   allowfullscreen
                 ></iframe>
               </div>
-            </div>
+            </p>
           </div>
         )}
       />
