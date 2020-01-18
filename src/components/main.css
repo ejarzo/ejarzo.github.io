@@ -1,6 +1,7 @@
 :root {
   --white: #f4f4f4;
-  --gray-light: #ddd;
+  --gray-lighter: #eee;
+  --gray-light: #ccc;
   --black: #222;
 }
 
@@ -38,15 +39,16 @@ h1 {
 a:hover {
   font-weight: bold;
 }
-/* p {
+p {
   font-family: 'Source Serif Pro', Times, serif;
-} */
+}
 p a {
   border-bottom: 2px solid var(--gray-light);
 }
 
 p a:hover {
-  font-weight: bold;
+  font-weight: normal;
+  /* color: black; */
   border-color: var(--black);
 }
 
@@ -65,10 +67,11 @@ video {
 }
 
 .code {
-  background: var(--gray-light);
+  background: var(--gray-lighter);
   padding: 1em;
   font-size: 1em;
   line-height: 1.1;
+  font-family: 'Inconsolata', monospace;
 }
 
 .SiteWrapper {

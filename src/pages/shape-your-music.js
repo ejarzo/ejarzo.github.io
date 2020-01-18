@@ -91,7 +91,7 @@ export default () => {
               </ul>
             </p>
 
-            <h3>How it works</h3>
+            <h3>How it Works</h3>
             <p>
               Melodic loops are created by drawing shapes. When a shape plays, a
               node traverses the perimeter of the shape at a constant speed,

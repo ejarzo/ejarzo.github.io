@@ -62,7 +62,7 @@ export default () => {
               >
                 New York Times
               </a>
-              ,
+              ,{' '}
               <a href="https://www.screenslate.com/" target="blank">
                 Screen Slate
               </a>
@@ -112,6 +112,7 @@ export default () => {
                 }}
               >
                 <iframe
+                  title="Verbolect screen capture"
                   style={{
                     position: 'absolute',
                     top: 0,

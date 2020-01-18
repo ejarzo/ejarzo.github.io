@@ -19,7 +19,6 @@ export default () => {
       <ProjectPage
         invertedHeader
         title="Fiber"
-        title="Fiber"
         bannerImage={bannerImage}
         links={[
           {
@@ -63,6 +62,7 @@ export default () => {
             <p className="MediaWrapper">
               <div style={{ padding: '61.02% 0 0 0', position: 'relative' }}>
                 <iframe
+                  title="Radiohead - Reckoner Cube Explosion"
                   src="https://player.vimeo.com/video/225468485?color=eee&byline=0&portrait=0"
                   style={{
                     position: 'absolute',
@@ -85,6 +85,7 @@ export default () => {
             <p className="MediaWrapper">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
+                  title="Fiber Demo"
                   src="https://player.vimeo.com/video/227336595?color=eee&byline=0&portrait=0"
                   style={{
                     position: 'absolute',

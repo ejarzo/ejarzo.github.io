@@ -102,6 +102,7 @@ export default () => {
             <p className="MediaWrapper">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
+                  title="Vec Tor Bel sequence"
                   src="https://player.vimeo.com/video/302939221?color=eee"
                   style={{
                     position: 'absolute',

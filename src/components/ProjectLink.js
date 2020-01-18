@@ -6,7 +6,7 @@ export default props => {
   return (
     <Link to={to}>
       <div className="ProjectLink__ImageWrapper">
-        <img src={imgSrc} />
+        <img alt={label} src={imgSrc} />
         <span className="ProjectLink__Label">{label}</span>
       </div>
     </Link>

@@ -9,7 +9,7 @@ export default ({ data }) => {
     <SiteWrapper>
       <SEO title="Bio" />
       <div className="row" style={{ textAlign: 'center' }}>
-        <img src={trianglesGif} height="200" />
+        <img alt="" src={trianglesGif} height="200" />
       </div>
       <div className="row">
         <div className="col-6">

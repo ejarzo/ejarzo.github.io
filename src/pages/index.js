@@ -1,14 +1,11 @@
 import React from 'react';
-import Header from '../components/Header.js';
-
 import SiteWrapper from '../components/SiteWrapper';
 import ProjectLink from '../components/ProjectLink';
-
+import SEO from '../components/seo.js';
 import verbolectTile from '../images/tiles/verbolect-tile.gif';
 import vectorbelTile from '../images/tiles/vec-tor-bel-tile.gif';
 import symTile from '../images/tiles/sym-tile.gif';
 import fiberTile from '../images/tiles/fiber-tile.gif';
-import SEO from '../components/seo.js';
 
 export default () => (
   <SiteWrapper>
