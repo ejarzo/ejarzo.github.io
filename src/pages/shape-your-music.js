@@ -100,10 +100,10 @@ export default () => {
               on the plane. The note for each subsequent edge is determined by
               the angle between that edge and the previous edge. This angle
               determines the musical interval between the two notes. For
-              example: A sharp right turn means that the next note is much
-              higher than the previous, while a shallow left turn means that the
-              next note is a little lower. When the last point is reached, the
-              loop starts again.
+              example: A sharp left turn means that the next note is much higher
+              than the previous, while a shallow right turn means that the next
+              note is a little lower. When the last point is reached, the loop
+              starts again.
             </p>
             <p>To demonstrate, here is the Star Wars Theme in shape form:</p>
             <p className="MediaWrapper">

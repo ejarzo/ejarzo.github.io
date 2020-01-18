@@ -23,7 +23,7 @@ export default ({ inverted }) => {
             background: inverted && '#222',
             lineHeight: '1.1',
           }}
-          to="/about"
+          to="/bio"
         >
           Bio
         </Link>

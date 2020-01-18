@@ -1,11 +1,13 @@
 import React from 'react';
 
 import SiteWrapper from '../components/SiteWrapper.js';
-// import trianglesGif from '../assets/gif/triangles_outline.gif';
-const trianglesGif = null;
+import trianglesGif from '../images/triangles_outline.gif';
+import SEO from '../components/seo.js';
+
 export default ({ data }) => {
   return (
     <SiteWrapper>
+      <SEO title="Bio" />
       <div className="row" style={{ textAlign: 'center' }}>
         <img src={trianglesGif} height="200" />
       </div>
