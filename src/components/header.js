@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 export default ({ inverted }) => {
   return (
-    <div className="row" style={{ marginBottom: 50 }}>
+    <div className="row">
       <div className="col-12">
         <h1>
           <Link

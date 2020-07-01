@@ -21,28 +21,28 @@ export default () => {
       }
       image1: file(relativePath: { eq: "vec-tor-bel1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
+          fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       image2: file(relativePath: { eq: "vec-tor-bel2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
+          fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       image3: file(relativePath: { eq: "vec-tor-bel3.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
+          fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       image4: file(relativePath: { eq: "vec-tor-bel4.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
+          fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
           }
         }

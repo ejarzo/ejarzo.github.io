@@ -79,14 +79,39 @@ video {
   margin: 0 auto;
 }
 
+.ProjectLink {
+  flex-basis: 25%;
+  height: calc(100vh - 140px);
+  padding: 5px;
+  transition: all 0.5s;
+}
+
+.Projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Projects:hover .ProjectLink {
+  flex-basis: 20%;
+}
+.Projects:hover .ProjectLink {
+  flex-basis: 20%;
+}
+.ProjectLink:hover {
+  flex-basis: 40% !important;
+}
+
 .ProjectLink__ImageWrapper {
+  height: 100%;
   position: relative;
   /* background: var(--gray-light); */
 }
 
 .ProjectLink__ImageWrapper img {
+  height: 100%;
   width: 100%;
   margin: 0;
+  object-fit: cover;
 }
 
 .ProjectPage__Title {
@@ -110,5 +135,23 @@ video {
 @media (max-width: 500px) {
   .MediaWrapper {
     margin: 20px 0;
+  }
+  .Projects {
+    flex-direction: column;
+  }
+  .ProjectLink {
+    width: 100%;
+    flex-basis: unset;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  .Projects:hover .ProjectLink {
+    flex-basis: unset;
+  }
+  .Projects:hover .ProjectLink {
+    flex-basis: unset;
+  }
+  .ProjectLink:hover {
+    flex-basis: unset !important;
   }
 }

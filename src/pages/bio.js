@@ -15,14 +15,12 @@ export default ({ data }) => {
         <div className="col-6">
           <p>
             I am a developer and musician interested in creating art and
-            interactive experiences with code. I especially enjoy exploring new
-            ways of making and interfacing with music. Check out{' '}
+            interactive experiences with code, especially new ways of making and
+            interfacing with music. Check out{' '}
             <a href="https://noncoreprojector.com" target="blank">
               NonCoreProjector
             </a>{' '}
-            for my latest art projects. In May 2017 I graduated from Tufts
-            University with a degree in Computer Science and German Language and
-            Literature, and now live in New York City.
+            for web-based art installations.
           </p>
         </div>
         <div className="col-6">
@@ -54,7 +52,6 @@ export default ({ data }) => {
             </a>
             .
           </p>
-          <p>Website by me.</p>
         </div>
       </div>
     </SiteWrapper>
