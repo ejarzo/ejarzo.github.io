@@ -34,7 +34,7 @@ export default () => {
           }
         }
       }
-      fiberBanner: file(relativePath: { eq: "fiber-banner.jpg" }) {
+      fiberBanner: file(relativePath: { eq: "fiber-screenshot.png" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
@@ -80,7 +80,7 @@ export default () => {
     <SiteWrapper>
       <SEO title="Projects" />
       <div className="ProjectsV2" style={{ padding: 5 }}>
-        <div className="Projects__List" style={{ flexShrink: 1 }}>
+        <div className="Projects__List">
           <div>
             {/* <h3>Installation</h3> */}
             <ul>
