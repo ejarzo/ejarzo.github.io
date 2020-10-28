@@ -67,7 +67,7 @@ export default () => {
         Content={() => (
           <div>
             <p>
-              <em>Vec Tor Bel</em> is an API art piece by{' '}
+              <em>Vec Tor Bel</em> is an API art installation by{' '}
               <a href="https://noncoreprojector.com" target="blank">
                 NonCoreProjector
               </a>{' '}

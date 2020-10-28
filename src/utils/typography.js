@@ -3,7 +3,7 @@ import Typography from 'typography';
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Inconsolata',
+      name: 'Roboto Mono',
       styles: ['400', '700'],
     },
     {
@@ -13,8 +13,8 @@ const typography = new Typography({
   ],
   baseLineHeight: 1.666,
   baseFontSize: '18px',
-  bodyFontFamily: ['Inconsolata', 'monospace'],
-  headerFontFamily: ['Inconsolata', 'monospace'],
+  bodyFontFamily: ['Roboto Mono', 'monospace'],
+  headerFontFamily: ['Roboto Mono', 'monospace'],
 });
 
 export default typography;

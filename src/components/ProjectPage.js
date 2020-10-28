@@ -21,22 +21,11 @@ export default props => {
         />
       )}
       <div>
+        <Header inverted={invertedHeader} />
         <div className="SiteWrapper">
-          <Header inverted={invertedHeader} />
           <div className="row">
             <div className="col-12">
               <h1 className="ProjectPage__Title">{title}</h1>
-              {links && (
-                <div>
-                  <div className="ProjectPage__Links">
-                    {links.map(({ label, href }, i) => (
-                      <a key={label} href={href} target="blank">
-                        {label} -> <br />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -47,6 +36,17 @@ export default props => {
       >
         <div className="row">
           <div className="col-12">
+            {links && (
+              <div>
+                <div className="ProjectPage__Links">
+                  {links.map(({ label, href }, i) => (
+                    <a key={label} href={href} target="blank">
+                      {label} {'->'} <br />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
             {Content && (
               <div>
                 <Content />

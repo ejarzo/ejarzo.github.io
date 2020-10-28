@@ -3,13 +3,13 @@ import Link from 'gatsby-link';
 
 export default ({ inverted }) => {
   return (
-    <div className="row">
-      <div className="col-12">
+    <header className="row" style={{ background: '#222' }}>
+      <div style={{ padding: '5px 40px', maxWidth: 1000, margin: 'auto' }}>
         <h1>
           <Link
             style={{
-              color: inverted && 'white',
-              background: inverted && '#222',
+              color: 'white',
+              // background:  '#222',
             }}
             to="/"
           >
@@ -19,15 +19,15 @@ export default ({ inverted }) => {
         <Link
           style={{
             float: 'right',
-            color: inverted && 'white',
-            background: inverted && '#222',
-            lineHeight: '1.1',
+            color: 'white',
+            // background: inverted && '#222',
+            // lineHeight: '1.1',
           }}
           to="/bio"
         >
           Bio
         </Link>
       </div>
-    </div>
+    </header>
   );
 };

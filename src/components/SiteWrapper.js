@@ -4,7 +4,7 @@ import Layout from './layout';
 export default props => {
   const { children } = props;
   return (
-    <div className="SiteWrapper">
+    <div>
       <Layout>{children}</Layout>
     </div>
   );

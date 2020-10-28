@@ -27,6 +27,7 @@ body {
 a {
   text-decoration: none;
   color: var(--black);
+  transition: all 0.1s;
 }
 
 h1 {
@@ -38,7 +39,15 @@ h1 {
 
 a:hover {
   font-weight: bold;
+  /* text-shadow: 0 0 15px rgba(253, 208, 82, 0.5); */
 }
+
+header a:hover,
+.ProjectPage__Links a:hover {
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 225, 143, 0.76);
+}
+
 p {
   font-family: 'Source Serif Pro', Times, serif;
 }
@@ -77,6 +86,7 @@ video {
 .SiteWrapper {
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 .ProjectLink {
@@ -116,19 +126,25 @@ video {
 
 .ProjectPage__Title {
   font-size: 4em;
+  padding: 0 5px;
+  margin-top: 100px;
   background: var(--black);
   color: var(--white);
+  position: relative;
+  top: 50px;
 }
 
 .ProjectPage__Links {
   /* background: var(--black);
   display: inline-block;
   margin-top: 2px; */
+  margin-bottom: 2em;
 }
 
 .ProjectPage__Links a {
   background: var(--black);
   color: var(--white);
+  padding: 2px 5px;
   text-transform: uppercase;
 }
 
@@ -154,4 +170,28 @@ video {
   .ProjectLink:hover {
     flex-basis: unset !important;
   }
+}
+
+.Projects__List {
+  padding-right: 20px;
+  flex-shrink: 1;
+}
+
+@media (max-width: 400px) {
+  .Projects__ImgContainer {
+    display: none;
+  }
+  .Projects__List {
+    padding: 0 40px;
+    flex-shrink: 0;
+    width: 100%;
+  }
+}
+
+.ProjectsV2 {
+  text-align: right;
+  display: flex;
+}
+.ProjectsV2 ul {
+  list-style: none;
 }
