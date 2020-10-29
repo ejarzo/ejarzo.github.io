@@ -79,7 +79,7 @@ export default () => {
   return (
     <SiteWrapper>
       <SEO title="Projects" />
-      <div className="ProjectsV2" style={{ padding: 5 }}>
+      <div className="ProjectsV2">
         <div className="Projects__List">
           <div>
             {/* <h3>Installation</h3> */}
@@ -138,7 +138,7 @@ export default () => {
                 boxShadow: '0 0 200px -40px rgba(0,0,0,0.4)',
                 top: 0,
                 left: 20,
-                width: 'calc(100% - 40px)',
+                width: 'calc(100% - 20px)',
                 transition: 'all 0.4s',
                 opacity: i === imgIndex ? 1 : 0,
                 filter: `blur(${i === imgIndex ? '0px' : '10px'})`,

@@ -3,8 +3,8 @@ import Link from 'gatsby-link';
 
 export default ({ inverted }) => {
   return (
-    <header className="row" style={{ background: '#222' }}>
-      <div style={{ padding: '5px 40px', maxWidth: 1000, margin: 'auto' }}>
+    <header className="row" style={{ background: '#222', height: 26 }}>
+      <div className="SiteWrapper" style={{ marginTop: 0 }}>
         <h1>
           <Link
             style={{

@@ -87,6 +87,7 @@ video {
   max-width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
+  padding: 0 40px;
 }
 
 .ProjectLink {
@@ -123,15 +124,20 @@ video {
   margin: 0;
   object-fit: cover;
 }
+.ProjectTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 0;
+}
 
 .ProjectPage__Title {
-  font-size: 4em;
-  padding: 0 5px;
-  margin-top: 100px;
-  background: var(--black);
+  font-size: 5em;
+  display: block;
+  text-align: center;
+  text-shadow: 0 0 20px rgb(240, 227, 188);
   color: var(--white);
-  position: relative;
-  top: 50px;
 }
 
 .ProjectPage__Links {

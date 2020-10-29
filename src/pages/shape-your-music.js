@@ -8,7 +8,7 @@ import starWarsVideo from '../video/sym-star-wars.mp4';
 export default () => {
   const { bannerImage, screenshotImage } = useStaticQuery(graphql`
     query {
-      bannerImage: file(relativePath: { eq: "sym-banner.png" }) {
+      bannerImage: file(relativePath: { eq: "sym-banner-2.png" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid

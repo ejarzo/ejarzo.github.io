@@ -22,17 +22,16 @@ export default props => {
       )}
       <div>
         <Header inverted={invertedHeader} />
-        <div className="SiteWrapper">
-          <div className="row">
-            <div className="col-12">
-              <h1 className="ProjectPage__Title">{title}</h1>
-            </div>
-          </div>
+        <div
+          className="SiteWrapper ProjectTitleWrapper"
+          style={{ height: 400 - 26 }}
+        >
+          <h1 className="ProjectPage__Title">{title}</h1>
         </div>
       </div>
       <div
         className="SiteWrapper"
-        style={{ position: 'relative', zIndex: 1, top: 140 }}
+        style={{ position: 'relative', zIndex: 1, marginTop: 30 }}
       >
         <div className="row">
           <div className="col-12">
