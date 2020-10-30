@@ -15,6 +15,12 @@ iframe {
   padding: 0;
 }
 
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
 html {
   background: var(--white);
 }

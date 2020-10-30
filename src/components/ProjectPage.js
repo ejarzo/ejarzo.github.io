@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header.js';
+import Footer from '../components/Footer.js';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
 
@@ -54,6 +55,7 @@ export default props => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

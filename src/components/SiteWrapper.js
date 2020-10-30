@@ -4,7 +4,7 @@ import Layout from './layout';
 export default props => {
   const { children } = props;
   return (
-    <div>
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <Layout>{children}</Layout>
     </div>
   );
