@@ -11,8 +11,26 @@ export default () => {
     verbolectBanner,
     symBanner,
     fiberBanner,
+    drumRadarBanner,
+    additiveSynthBanner,
   } = useStaticQuery(graphql`
     query {
+      drumRadarBanner: file(relativePath: { eq: "drum-radar.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      additiveSynthBanner: file(
+        relativePath: { eq: "additive-synth-banner.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 2400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       vecTorBelBanner: file(relativePath: { eq: "vec-tor-bel-banner.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
@@ -44,6 +62,8 @@ export default () => {
     }
   `);
   const imgs = [
+    drumRadarBanner.childImageSharp.fluid,
+    additiveSynthBanner.childImageSharp.fluid,
     vecTorBelBanner.childImageSharp.fluid,
     verbolectBanner.childImageSharp.fluid,
     symBanner.childImageSharp.fluid,
@@ -53,6 +73,19 @@ export default () => {
   const onMouseEnter = i => {
     setImgIndex(i);
   };
+
+  const links = [
+    {
+      title: 'Drum Radar',
+      info: 'Audio Experiment, 2020',
+      to: 'https://drum-radar.netlify.app/',
+    },
+    {
+      title: 'Additive Synthesizer',
+      info: 'Audio Experiment, 2020',
+      to: 'https://additive-synth.netlify.app/',
+    },
+  ];
 
   const projects = [
     {
@@ -76,6 +109,7 @@ export default () => {
       to: '/fiber',
     },
   ];
+
   return (
     <SiteWrapper>
       <SEO title="Projects" />
@@ -84,10 +118,24 @@ export default () => {
           <div>
             {/* <h3>Installation</h3> */}
             <ul>
+              {links.map(({ title, info, to }, i) => (
+                <a href={to} target="blank">
+                  <li
+                    onMouseEnter={() => onMouseEnter(i)}
+                    style={{ marginBottom: '2em' }}
+                  >
+                    <span>{title}</span>
+                    <br />
+                    <span style={{ fontSize: '0.7em', opacity: 0.7 }}>
+                      {info}
+                    </span>
+                  </li>
+                </a>
+              ))}
               {projects.map(({ title, info, to }, i) => (
                 <Link to={to}>
                   <li
-                    onMouseEnter={() => onMouseEnter(i)}
+                    onMouseEnter={() => onMouseEnter(i + 2)}
                     style={{ marginBottom: '2em' }}
                   >
                     <span>{title}</span>
