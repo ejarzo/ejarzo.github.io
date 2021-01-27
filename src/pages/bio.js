@@ -63,10 +63,6 @@ export default ({ data }) => {
             >
               LinkedIn
             </a>
-            ,{' '}
-            <a href="https://medium.com/@eliasjarzombek" target="blank">
-              Medium
-            </a>
             , and{' '}
             <a href="https://twitter.com/jarz_0" target="blank">
               Twitter
