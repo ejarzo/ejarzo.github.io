@@ -22,11 +22,11 @@ export default () => {
         bannerImage={bannerImage}
         links={[
           {
-            label: 'Try Iteration 1',
+            label: 'Play V1',
             href: 'https://additive-synth.netlify.app',
           },
           {
-            label: 'Try Iteration 2',
+            label: 'Play V2',
             href: 'https://deploy-preview-1--additive-synth.netlify.app/',
           },
           {

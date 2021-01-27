@@ -88,8 +88,9 @@ export default props => {
             {links && (
               <div>
                 <div className="ProjectPage__Links">
-                  {links.map(({ label, href }, i) => (
+                  {links.map(({ label, href, isPrimary }, i) => (
                     <a
+                      className={`btn ${isPrimary ? 'btn--primary' : ''}`}
                       key={label}
                       href={href}
                       target="blank"

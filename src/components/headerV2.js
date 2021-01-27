@@ -48,16 +48,7 @@ export default React.memo(() => {
         }}
       >
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <h1
-            className="HomeLink"
-            style={{
-              // fontSize: '3em',
-              display: 'inline',
-              fontFamily: 'Source Serif Pro',
-            }}
-          >
-            Elias Jarzombek
-          </h1>
+          <h1 className="HomeLink">Elias Jarzombek</h1>
         </Link>
         <div
           className="SocialLinks"

@@ -1,6 +1,6 @@
 :root {
   --white: #eee4d5;
-  --primary: rgb(238, 167, 15);
+  --primary: rgb(214, 158, 37);
   --gray-lighter: #eee;
   --gray-light: #ccc;
   --black: #201f1c;
@@ -66,7 +66,7 @@ a:hover {
 }
 
 header a:hover,
-.ProjectPage__Links a:hover {
+.btn:hover {
   font-weight: bold;
   /* text-shadow: 0 0 15px rgba(255, 225, 143, 0.76); */
 }
@@ -185,6 +185,8 @@ video {
 
 .HomeLink {
   font-size: 3em;
+  display: inline-block;
+  font-family: 'Source Serif Pro', serif;
 }
 
 .HomeLink:hover {
@@ -192,7 +194,7 @@ video {
   filter: url('#filter');
 }
 
-.ProjectPage__Links a {
+.btn {
   font-size: 1em;
   text-decoration: none;
   margin: 10px;
@@ -205,12 +207,15 @@ video {
   transition: all 0.2s;
   transform: scale3d(1, 1, 1);
 }
-.ProjectPage__Links a:hover {
+.btn--primary {
+  background: var(--primary);
+}
+.btn:hover {
   transform: scale3d(1.1, 1.1, 1);
   box-shadow: 0 10px 50px -7px rgba(0, 0, 0, 0.8);
 }
 .background--full {
-  filter: brightness(0.6);
+  filter: brightness(0.7);
 }
 @media (max-width: 500px) {
   .MediaWrapper {

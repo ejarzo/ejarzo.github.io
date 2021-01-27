@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SiteWrapper from '../components/SiteWrapper.js';
-import trianglesGif from '../images/triangles_outline.gif';
 import SEO from '../components/seo.js';
 import HeaderV2 from '../components/headerV2.js';
 
@@ -36,7 +35,7 @@ export default ({ data }) => {
                 borderRadius: 2,
               }}
             >
-              ejarz{'[at]'}pm.me
+              {'ejarz[at]pm.me'}
             </span>{' '}
           </p>
           <p>
@@ -45,7 +44,7 @@ export default ({ data }) => {
               GitHub
             </a>
             ,{' '}
-            <a href="jarz0.bandcamp.com/" target="blank">
+            <a href="https://jarz0.bandcamp.com/" target="blank">
               {' '}
               Bandcamp
             </a>

@@ -108,7 +108,7 @@ export default () => {
     {
       title: 'Tirtha: An Architectural Opera',
       imgFluid: tirthaBanner.childImageSharp.fluid,
-      info: 'Soundtrack/Multidisciplinary, 2020',
+      info: 'Album, 2020',
       to: '/tirtha',
       imgAttribution: 'Image by Office of Uncertainty Research',
     },
@@ -127,7 +127,7 @@ export default () => {
     {
       title: '◣',
       imgFluid: triangleAnimationBanner.childImageSharp.fluid,
-      info: 'Animation/Short Film, 2020',
+      info: 'Animation, 2020',
       to: '/triangle-animation',
     },
     {

@@ -43,7 +43,7 @@ export default () => {
             <p>
               <em>Tirtha: An Architectural Opera</em> is a cross-disciplinary,
               collaborative effort to present architecture as a multimedia
-              experience. Conceived by by{' '}
+              experience. Conceived by{' '}
               <a href="https://www.officeofuncertaintyresearch.org/">
                 The Office of Uncertainty Research
               </a>
@@ -73,28 +73,34 @@ export default () => {
               ></iframe>
             </p>
             <p>
-              The operatic tradition, in the West, thrills in presenting and
-              re-presenting, the well-worn drama, with exaggerated auditory and
-              visual delight. With Tirtha, OUR aspires to present architecture
-              with the same auditory and visual delight, thereby inaugurating a
-              new tradition for architectural representation. By adding
-              narrative, music and spectacle to it, Tirtha seeks to transform
-              the dull architectural custom of the ‘rendering’ and the
-              ‘fly-through’ into a performance art.
+              <em>
+                "The operatic tradition, in the West, thrills in presenting and
+                re-presenting, the well-worn drama, with exaggerated auditory
+                and visual delight. With Tirtha, OUR aspires to present
+                architecture with the same auditory and visual delight, thereby
+                inaugurating a new tradition for architectural representation.
+                By adding narrative, music and spectacle to it, Tirtha seeks to
+                transform the dull architectural custom of the ‘rendering’ and
+                the ‘fly-through’ into a performance art.
+              </em>
             </p>
             <p>
-              Architecture, in itself, in its forms, structure, orders and
-              progressions, has narrative and theatre already deeply embedded in
-              it. This is well known within the discipline. The objective of
-              architectural opera is to bring the drama of architecture into the
-              public realm in the form of a performing art.
+              <em>
+                "Architecture, in itself, in its forms, structure, orders and
+                progressions, has narrative and theatre already deeply embedded
+                in it. This is well known within the discipline. The objective
+                of architectural opera is to bring the drama of architecture
+                into the public realm in the form of a performing art.
+              </em>
             </p>
             <p>
-              Unlike cinema or theatre, that focuses on the run and nuance of
-              narrative sequence, opera delights in the spectacle of emotion and
-              scenography. Operating in the same registers, an architectural
-              opera seeks to greatly embellish narrative to embellish and make
-              shine the drama and beauty of architecture.
+              <em>
+                "Unlike cinema or theatre, that focuses on the run and nuance of
+                narrative sequence, opera delights in the spectacle of emotion
+                and scenography. Operating in the same registers, an
+                architectural opera seeks to greatly embellish narrative to
+                embellish and make shine the drama and beauty of architecture."
+              </em>
             </p>
             <p>
               <Img

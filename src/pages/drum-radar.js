@@ -37,6 +37,17 @@ export default () => {
               is a drum machine that visualizes rhythm as circles and spokes.
             </p>
             <p>
+              <iframe
+                title="Triangle Animation"
+                src="https://player.vimeo.com/video/505089921?color=eae6de"
+                width="100%"
+                height="700"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+              ></iframe>
+            </p>
+            <p>
               Each drum track plays at constant rate in a circle, ‘hitting’
               spokes as it passes to trigger its sample. For each drum sound you
               can control how big its radius is (how long the loop lasts) and
