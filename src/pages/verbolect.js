@@ -40,7 +40,6 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        invertedHeader
         title="Verbolect"
         bannerImage={bannerImage}
         links={[
@@ -170,34 +169,8 @@ export default () => {
               </a>{' '}
               is the backbone of the piece. In addition to generating the
               conversation, it provides emotional analysis for each reply that
-              we use to source images, videos, and audio. To get the idea, here
-              is an example response from the API (these are the most relevant
-              fields; the full response has many more).
+              we use to source images, videos, and audio.
             </p>
-            <p className="code">
-              emotion: "calm",
-              <br />
-              emotion_degree: "32",
-              <br />
-              emotion_tone: "0",
-              <br />
-              emotion_values: "0,0,0,0,40,0,0",
-              <br />
-              input: "Nice to meet you, too!",
-              <br />
-              output: "What are you doing now?",
-              <br />
-              output_label: "welcome",
-              <br />
-              reaction: "pleased",
-              <br />
-              reaction_degree: "65",
-              <br />
-              reaction_tone: "1",
-              <br />
-              reaction_values: "0,0,0,0,60,0,0"
-            </p>
-
             <p>
               We use these values to draw graph the conversation, control
               parameters in a force simulation, and find online content via

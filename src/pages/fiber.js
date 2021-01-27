@@ -17,7 +17,6 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        invertedHeader
         title="Fiber"
         bannerImage={bannerImage}
         links={[
