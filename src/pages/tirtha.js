@@ -63,7 +63,7 @@ export default () => {
             </p>
             <p>
               <iframe
-                title="Texturizer Screencapture"
+                title="Tirtha: An Architectural Opera video"
                 src="https://player.vimeo.com/video/476512339?color=eae6de"
                 width="100%"
                 height="400"
@@ -110,6 +110,7 @@ export default () => {
             </p>
             <p style={{ maxWidth: 700, margin: '0 auto' }}>
               <iframe
+                title="Tirtha Album on Bandcamp"
                 style={{
                   margin: '0 auto',
                   border: 0,

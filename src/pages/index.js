@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SiteWrapper from '../components/SiteWrapper';
-// import ProjectLink from '../components/ProjectLink';
 import SEO from '../components/seo.js';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -21,7 +20,7 @@ export default () => {
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
-        relativePath: { eq: "triangle-animation-banner-2.png" }
+        relativePath: { eq: "triangle-animation-banner.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 2400, quality: 100) {

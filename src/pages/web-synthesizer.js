@@ -1,7 +1,6 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 export default () => {
   const { bannerImage } = useStaticQuery(graphql`

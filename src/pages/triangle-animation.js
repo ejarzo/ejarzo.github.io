@@ -1,14 +1,11 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 export default () => {
-  const { bannerImage, plantTypesImage, groundImage } = useStaticQuery(graphql`
+  const { bannerImage } = useStaticQuery(graphql`
     query {
-      bannerImage: file(
-        relativePath: { eq: "triangle-animation-banner-2.png" }
-      ) {
+      bannerImage: file(relativePath: { eq: "triangle-animation-banner.png" }) {
         childImageSharp {
           fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
@@ -33,10 +30,6 @@ export default () => {
             <p>
               This animated short tells the story of a ◣ who navigates a
               geometric world with the help of some friends.
-            </p>
-            <p>
-              It was primarily an exercise in learning the basics of animation
-              using After Effects.
             </p>
             <p>
               <iframe
