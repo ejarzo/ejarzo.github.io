@@ -53,7 +53,6 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        invertedHeader
         title="Vec Tor Bel"
         bannerImage={bannerImage}
         links={[

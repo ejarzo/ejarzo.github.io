@@ -40,7 +40,6 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        invertedHeader
         title="Verbolect"
         bannerImage={bannerImage}
         links={[
@@ -69,17 +68,36 @@ export default () => {
               .
             </p>
             <p>
+              This is a project by{' '}
+              <a href="https://www.facebook.com/verbolect/" target="blank">
+                NonCoreProjector
+              </a>{' '}
+              (Artist and educator{' '}
+              <a href="http://www.johnjoconnor.net" target="blank">
+                John O'Connor
+              </a>
+              , Cleverbot creator and AI expert{' '}
+              <a
+                href="https://en.wikipedia.org/wiki/Rollo_Carpenter"
+                target="blank"
+              >
+                Rollo Carpenter
+              </a>
+              , multimedia artist Jack Colton, and myself)
+            </p>
+            <p>
               Verbolect is visual exploration of a conversation between{' '}
               <a href="http://www.cleverbot.com/" target="blank">
                 Cleverbot
               </a>{' '}
               and itself. Cleverbot is a chatbot that uses artificial
-              intelligence to talk with users. First made available in 1997, it
-              learns from its conversations to generate responses, so everything
-              that Cleverbot says has at some point been said to it. In this
-              way, the project is as much an exploration of human tendencies as
-              it is of artificial intelligence.
+              intelligence to talk with users. Since 1997, it has been learning
+              how to speak by conversing with people around the world. Since
+              everything that Cleverbot says has at some point been said to it,
+              the project is as much an exploration of human tendencies as it is
+              of "artificial" ones.
             </p>
+
             <p className="MediaWrapper">
               <Img fluid={image2.childImageSharp.fluid} />
             </p>
@@ -127,37 +145,13 @@ export default () => {
                 ></iframe>
               </div>
             </p>
-            <p>
-              This project was a collaboration with artist and teacher{' '}
-              <a href="http://www.johnjoconnor.net" target="blank">
-                John O'Connor
-              </a>
-              , Cleverbot creator and AI expert{' '}
-              <a
-                href="https://en.wikipedia.org/wiki/Rollo_Carpenter"
-                target="blank"
-              >
-                Rollo Carpenter
-              </a>
-              , and multimedia artist{' '}
-              <a
-                href="https://www.instagram.com/jakecalcium/?hl=en"
-                target="blank"
-              >
-                Jack Colton
-              </a>
-              . Together we founded a collective called{' '}
-              <a href="https://www.facebook.com/verbolect/" target="blank">
-                NonCoreProjector
-              </a>
-              .
-            </p>
+
             <p className="MediaWrapper">
               <Img fluid={image3.childImageSharp.fluid} />
             </p>
             <p>
-              <strong>My Role: </strong>I implemented the projection, which
-              manifests itself as a web application that uses several{' '}
+              I wrote the main projection code, which as a web application that
+              uses several{' '}
               <a
                 href="https://en.wikipedia.org/wiki/Application_programming_interface"
                 target="blank"
@@ -170,40 +164,14 @@ export default () => {
               </a>{' '}
               is the backbone of the piece. In addition to generating the
               conversation, it provides emotional analysis for each reply that
-              we use to source images, videos, and audio. To get the idea, here
-              is an example response from the API (these are the most relevant
-              fields; the full response has many more).
+              we use to source images, videos, and audio.
             </p>
-            <p className="code">
-              emotion: "calm",
-              <br />
-              emotion_degree: "32",
-              <br />
-              emotion_tone: "0",
-              <br />
-              emotion_values: "0,0,0,0,40,0,0",
-              <br />
-              input: "Nice to meet you, too!",
-              <br />
-              output: "What are you doing now?",
-              <br />
-              output_label: "welcome",
-              <br />
-              reaction: "pleased",
-              <br />
-              reaction_degree: "65",
-              <br />
-              reaction_tone: "1",
-              <br />
-              reaction_values: "0,0,0,0,60,0,0"
-            </p>
-
             <p>
-              We use these values to draw graph the conversation, control
-              parameters in a force simulation, and find online content via
-              external APIs (YouTube, stock footage, etc). These distinct
-              "modules" are explored by a roving eye while the conversation
-              takes place.
+              We use this emotion data to graph the conversation phrase by
+              phrase and find relevant online content via external APIs
+              (YouTube, stock footage, etc). These distinct "modules" are
+              explored by a mechanical roving eye while the conversation takes
+              place.
             </p>
             <p>
               <em>
@@ -222,9 +190,6 @@ export default () => {
               >
                 Read the full press release.
               </a>
-            </p>
-            <p>
-              <strong>Tools:</strong> Processing, JavaScript, D3.js, HTML, CSS
             </p>
           </div>
         )}

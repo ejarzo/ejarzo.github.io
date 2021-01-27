@@ -14,7 +14,7 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   baseFontSize: '18px',
   bodyFontFamily: ['Roboto Mono', 'monospace'],
-  headerFontFamily: ['Roboto Mono', 'monospace'],
+  // headerFontFamily: ['Roboto Mono', 'monospace'],
 });
 
 export default typography;

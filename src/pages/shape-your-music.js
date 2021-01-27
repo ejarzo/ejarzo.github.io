@@ -27,12 +27,14 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        invertedHeader
         title="Shape Your Music"
         bannerImage={bannerImage}
         links={[
-          { label: 'Demo', href: 'https://shapeyourmusic.dev' },
-          { label: 'Code', href: 'https://github.com/ejarzo/Shape-Your-Music' },
+          { label: 'Visit Site', href: 'https://shapeyourmusic.dev' },
+          {
+            label: 'View Source',
+            href: 'https://github.com/ejarzo/Shape-Your-Music',
+          },
         ]}
         Content={() => (
           <div>
@@ -109,6 +111,7 @@ export default () => {
             <p className="MediaWrapper">
               <video controls style={{ width: '100%' }}>
                 <source src={starWarsVideo} type="video/mp4" />
+                <track default kind="captions" src="" />
               </video>
             </p>
             <p>

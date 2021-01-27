@@ -1,39 +1,60 @@
 import React from 'react';
 
 import SiteWrapper from '../components/SiteWrapper.js';
-import trianglesGif from '../images/triangles_outline.gif';
 import SEO from '../components/seo.js';
+import HeaderV2 from '../components/headerV2.js';
 
 export default ({ data }) => {
   return (
     <SiteWrapper>
       <SEO title="Bio" />
-      <div className="row" style={{ textAlign: 'center' }}>
-        <img alt="" src={trianglesGif} height="200" />
-      </div>
+      <HeaderV2 />
       <div className="row">
         <div className="col-6">
+          <p>Hello! I make things with sound and code.</p>
           <p>
-            I am a developer and musician interested in creating art and
-            interactive experiences with code, especially new ways of making and
-            interfacing with music. Check out{' '}
+            Check out{' '}
             <a href="https://noncoreprojector.com" target="blank">
               NonCoreProjector
             </a>{' '}
-            for web-based art installations.
+            for web-based art installations or listen to my band{' '}
+            <a href="https://obstaclemusic.com" target="blank">
+              Obstacle
+            </a>
+            's latest release.
           </p>
         </div>
         <div className="col-6">
           <p>
-            Feel free to <a href="mailto:ejarz25@gmail.com">contact me</a>. I am
-            also on{' '}
+            Feel free to contact me at{' '}
+            <span
+              className="highlighted"
+              style={{
+                display: 'inline-block',
+                padding: '0 3px',
+                borderRadius: 2,
+              }}
+            >
+              {'ejarz[at]pm.me'}
+            </span>{' '}
+          </p>
+          <p>
+            I am also on{' '}
             <a href="https://github.com/ejarzo/" target="blank">
-              Github
+              GitHub
             </a>
             ,{' '}
-            <a href="https://soundcloud.com/jarz0" target="blank">
+            <a href="https://jarz0.bandcamp.com/" target="blank">
               {' '}
-              Soundcloud
+              Bandcamp
+            </a>
+            ,{' '}
+            <a
+              href="https://open.spotify.com/artist/0Si7RnGwNEWeH1AhYgzyW4"
+              target="blank"
+            >
+              {' '}
+              Spotify
             </a>
             ,{' '}
             <a
@@ -46,7 +67,7 @@ export default ({ data }) => {
             <a href="https://medium.com/@eliasjarzombek" target="blank">
               Medium
             </a>
-            , and occasionally{' '}
+            , and{' '}
             <a href="https://twitter.com/jarz_0" target="blank">
               Twitter
             </a>

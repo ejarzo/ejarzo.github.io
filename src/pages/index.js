@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import SiteWrapper from '../components/SiteWrapper';
-import ProjectLink from '../components/ProjectLink';
 import SEO from '../components/seo.js';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import HeaderV2 from '../components/headerV2';
 
 export default () => {
   const {
@@ -11,64 +11,93 @@ export default () => {
     verbolectBanner,
     symBanner,
     fiberBanner,
+    musicalGardenBanner,
+    tirthaBanner,
+    texturizerBanner,
     drumRadarBanner,
     additiveSynthBanner,
+    triangleAnimationBanner,
   } = useStaticQuery(graphql`
     query {
-      drumRadarBanner: file(relativePath: { eq: "drum-radar.png" }) {
+      triangleAnimationBanner: file(
+        relativePath: { eq: "triangle-animation-banner.png" }
+      ) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      texturizerBanner: file(relativePath: { eq: "texturizer-banner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      tirthaBanner: file(relativePath: { eq: "tirtha-banner-2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      musicalGardenBanner: file(
+        relativePath: { eq: "musical-garden-banner-2.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      drumRadarBanner: file(relativePath: { eq: "drum-radar-banner-2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       additiveSynthBanner: file(
-        relativePath: { eq: "additive-synth-banner.png" }
+        relativePath: { eq: "additive-synth-banner-2.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       vecTorBelBanner: file(relativePath: { eq: "vec-tor-bel-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       verbolectBanner: file(relativePath: { eq: "verbolect-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      symBanner: file(relativePath: { eq: "sym-screenshot.png" }) {
+      symBanner: file(relativePath: { eq: "sym-banner-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       fiberBanner: file(relativePath: { eq: "fiber-screenshot.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
+          fluid(maxWidth: 2400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
-  const imgs = [
-    drumRadarBanner.childImageSharp.fluid,
-    additiveSynthBanner.childImageSharp.fluid,
-    vecTorBelBanner.childImageSharp.fluid,
-    verbolectBanner.childImageSharp.fluid,
-    symBanner.childImageSharp.fluid,
-    fiberBanner.childImageSharp.fluid,
-  ];
+
   const [imgIndex, setImgIndex] = useState(0);
   const onMouseEnter = i => {
     setImgIndex(i);
@@ -76,35 +105,65 @@ export default () => {
 
   const links = [
     {
-      title: 'Drum Radar',
-      info: 'Audio Experiment, 2020',
-      to: 'https://drum-radar.netlify.app/',
+      title: 'Tirtha: An Architectural Opera',
+      imgFluid: tirthaBanner.childImageSharp.fluid,
+      info: 'Album, 2020',
+      to: '/tirtha',
+      imgAttribution: 'Image by Office of Uncertainty Research',
     },
     {
-      title: 'Additive Synthesizer',
-      info: 'Audio Experiment, 2020',
-      to: 'https://additive-synth.netlify.app/',
-    },
-  ];
-
-  const projects = [
-    {
-      title: 'Vec Tor Bel',
-      info: 'Installation, 2018',
-      to: '/vec-tor-bel',
-    },
-    {
-      title: 'Verbolect',
-      info: 'Installation, 2017',
-      to: '/verbolect',
+      title: 'Musical Garden',
+      imgFluid: musicalGardenBanner.childImageSharp.fluid,
+      info: 'Web/Audio, 2020',
+      to: '/musical-garden',
     },
     {
       title: 'Shape Your Music',
+      imgFluid: symBanner.childImageSharp.fluid,
       info: 'Web/Audio, Ongoing',
       to: '/shape-your-music',
     },
     {
+      title: '◣',
+      imgFluid: triangleAnimationBanner.childImageSharp.fluid,
+      info: 'Animation, 2020',
+      to: '/triangle-animation',
+    },
+    {
+      title: 'Texturizer',
+      imgFluid: texturizerBanner.childImageSharp.fluid,
+      info: 'Web/Generative, 2020',
+      to: '/texturizer',
+    },
+    {
+      title: 'Drum Radar',
+      imgFluid: drumRadarBanner.childImageSharp.fluid,
+      info: 'Web/Audio, 2020',
+      to: '/drum-radar',
+    },
+    {
+      title: 'Web Synthesizer',
+      imgFluid: additiveSynthBanner.childImageSharp.fluid,
+      info: 'Web/Audio, 2020',
+      to: '/web-synthesizer',
+    },
+    {
+      title: 'Vec Tor Bel',
+      imgFluid: vecTorBelBanner.childImageSharp.fluid,
+      info: 'Installation, 2018',
+      to: '/vec-tor-bel',
+      imgAttribution: 'Photo courtesy of False Flag Gallery',
+    },
+    {
+      title: 'Verbolect',
+      imgFluid: verbolectBanner.childImageSharp.fluid,
+      info: 'Installation, 2017',
+      to: '/verbolect',
+      imgAttribution: 'Photo courtesy of Pierogi Gallery',
+    },
+    {
       title: 'Fiber',
+      imgFluid: fiberBanner.childImageSharp.fluid,
       info: 'Immersive Experience, 2017',
       to: '/fiber',
     },
@@ -113,118 +172,137 @@ export default () => {
   return (
     <SiteWrapper>
       <SEO title="Projects" />
+
+      <HeaderV2 />
+
       <div className="ProjectsV2">
-        <div className="Projects__List">
-          <div>
-            {/* <h3>Installation</h3> */}
-            <ul>
-              {links.map(({ title, info, to }, i) => (
-                <a href={to} target="blank">
-                  <li
-                    onMouseEnter={() => onMouseEnter(i)}
-                    style={{ marginBottom: '2em' }}
-                  >
-                    <span>{title}</span>
-                    <br />
-                    <span style={{ fontSize: '0.7em', opacity: 0.7 }}>
-                      {info}
-                    </span>
-                  </li>
-                </a>
-              ))}
-              {projects.map(({ title, info, to }, i) => (
-                <Link to={to}>
-                  <li
-                    onMouseEnter={() => onMouseEnter(i + 2)}
-                    style={{ marginBottom: '2em' }}
-                  >
-                    <span>{title}</span>
-                    <br />
-                    <span style={{ fontSize: '0.7em', opacity: 0.7 }}>
-                      {info}
-                    </span>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
-          {/* <div style={{ marginTop: '3em' }}>
-            <h3>Digital</h3>
-            <ul>
-              <li onMouseEnter={() => onMouseEnter(0)}>
-                <Link to="/vec-tor-bel">Vec Tor Bel (Installation, 2018)</Link>
-              </li>
-              <li onMouseEnter={() => onMouseEnter(1)}>
-                <Link to="/verbolect">Verbolect (Installation, 2017)</Link>
-              </li>
-              <li onMouseEnter={() => onMouseEnter(2)}>
-                <Link to="/shape-your-music">
-                  Shape Your Music (Web/Audio, ongoing)
-                </Link>
-              </li>
-              <li onMouseEnter={() => onMouseEnter(3)}>
-                <Link to="/fiber">Fiber (Immersive experience, 2017)</Link>
-              </li>
-            </ul>
-          </div> */}
-        </div>
         <div
           className="Projects__ImgContainer"
-          style={{ padding: 20, flexGrow: 1, position: 'relative' }}
+          style={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+            top: 0,
+            left: 0,
+            zIndex: -1,
+            overflow: 'hidden',
+            pointerEvents: 'none',
+            // background: '#222',
+          }}
         >
-          {/*  {imgIndex && (
-            <Img
-              style={{ boxShadow: '0 0 200px -40px rgba(0,0,0,0.4)' }}
-              fluid={imgIndex}
-            />
-          )} */}
-
-          {imgs.map((src, i) => (
-            <Img
+          {links.map(({ title, imgFluid }, i) => (
+            <div
+              key={title}
               style={{
                 position: 'absolute',
-                boxShadow: '0 0 200px -40px rgba(0,0,0,0.4)',
                 top: 0,
-                left: 20,
-                width: 'calc(100% - 20px)',
-                transition: 'all 0.4s',
-                opacity: i === imgIndex ? 1 : 0,
-                filter: `blur(${i === imgIndex ? '0px' : '10px'})`,
+                left: 0,
+                width: '100%',
+                height: '100%',
               }}
-              fluid={src}
-            />
+            >
+              <Img
+                className="background--full"
+                fluid={imgFluid}
+                style={{
+                  userSelect: 'none',
+                  objectFit: 'cover',
+                  // filter: 'blur(0px)',
+                  // filter: 'brightness(0.8)',
+                  transition: 'opacity 1s',
+                  width: '100%',
+                  height: '100%',
+                  opacity: i === imgIndex ? 1 : 0,
+                }}
+              />
+            </div>
           ))}
         </div>
-        {/* <div className="Projects">
-          <div className="ProjectLink">
-            <ProjectLink
-              to="/vec-tor-bel"
-              label="Vec Tor Bel"
-              imgSrc={vecTorBelBanner.childImageSharp.fluid}
-            />
+        <div
+          style={{
+            position: 'fixed',
+            textTransform: 'uppercase',
+            bottom: 2,
+            right: 4,
+            fontSize: '0.5em',
+            opacity: 0.9,
+          }}
+        >
+          {links[imgIndex].imgAttribution}
+        </div>
+        <div className="Projects__List">
+          <div>
+            <ul>
+              {links.map(({ title, info, to, href }, i) => {
+                const isHovered = i === imgIndex;
+                const Wrapper = ({ children }) =>
+                  to ? (
+                    <Link style={{ display: 'inline-block' }} to={to}>
+                      {children}
+                    </Link>
+                  ) : (
+                    <a
+                      style={{ display: 'inline-block' }}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {children}
+                    </a>
+                  );
+
+                return (
+                  <li
+                    key={title}
+                    onMouseEnter={() => onMouseEnter(i)}
+                    style={{
+                      marginBottom: '2em',
+                      // background: 'rgba(0, 0, 0, 0.4)',
+                      padding: 4,
+                      position: 'relative',
+                      textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
+                    }}
+                  >
+                    <Wrapper>
+                      {isHovered && (
+                        <h2
+                          style={{
+                            margin: 0,
+                            position: 'absolute',
+                            left: -28,
+                            fontFamily: 'Source Serif Pro',
+                          }}
+                        >
+                          {'>'}
+                        </h2>
+                      )}
+                      <h2
+                        style={{
+                          margin: 0,
+                          fontWeight: 'bold',
+                          fontFamily: 'Source Serif Pro',
+                          textShadow: '0 0 20px 20px rgba(0,0,0,0.1)',
+                        }}
+                      >
+                        {title}
+                      </h2>
+                      <span
+                        style={{
+                          fontSize: '0.7em',
+                          textTransform: 'uppercase',
+                          opacity: 1,
+                          fontWeight: '0 !important',
+                        }}
+                      >
+                        {info}
+                      </span>
+                    </Wrapper>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-          <div className="ProjectLink">
-            <ProjectLink
-              to="/verbolect"
-              label="Verbolect"
-              imgSrc={verbolectBanner.childImageSharp.fluid}
-            />
-          </div>
-          <div className="ProjectLink">
-            <ProjectLink
-              to="/shape-your-music"
-              label="Shape Your Music"
-              imgSrc={symBanner.childImageSharp.fluid}
-            />
-          </div>
-          <div className="ProjectLink">
-            <ProjectLink
-              to="/fiber"
-              label="Fiber"
-              imgSrc={fiberBanner.childImageSharp.fluid}
-            />
-          </div>
-        </div> */}
+        </div>
       </div>
     </SiteWrapper>
   );
