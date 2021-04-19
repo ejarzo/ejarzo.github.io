@@ -17,6 +17,7 @@ export default () => {
     drumRadarBanner,
     additiveSynthBanner,
     triangleAnimationBanner,
+    abacusynthBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -95,6 +96,13 @@ export default () => {
           }
         }
       }
+      abacusynthBanner: file(relativePath: { eq: "abacusynth-banner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -105,9 +113,15 @@ export default () => {
 
   const links = [
     {
+      title: 'Abacusynth',
+      imgFluid: abacusynthBanner.childImageSharp.fluid,
+      info: 'Web/Audio, 2021',
+      to: '/abacusynth',
+    },
+    {
       title: 'Tirtha: An Architectural Opera',
       imgFluid: tirthaBanner.childImageSharp.fluid,
-      info: 'Album, 2020',
+      info: 'Album/Multimedia, 2020',
       to: '/tirtha',
       imgAttribution: 'Image by Office of Uncertainty Research',
     },
