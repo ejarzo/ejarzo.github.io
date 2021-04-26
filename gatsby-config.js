@@ -42,7 +42,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-plausible`,
       options: {
-        domain: `ejarzo.github.io`,
+        domain: `eliasjarzombek.com`,
+        customDomain: 'sts.eliasjarzombek.com',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
