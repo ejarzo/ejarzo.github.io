@@ -11,10 +11,6 @@ export default React.memo(() => {
       label: 'Twitter',
       href: 'https://twitter.com/jarz_0',
     },
-    {
-      label: 'Music',
-      href: 'https://linktr.ee/jarz0',
-    },
   ];
 
   return (
@@ -57,12 +53,26 @@ export default React.memo(() => {
             textTransform: 'uppercase',
           }}
         >
-          <Link to="/bio">About</Link> {' /// '}
-          {selfLinks.map(({ label, href }, i) => (
+          <Link activeClassName="is-active" to="/bio">
+            About
+          </Link>{' '}
+          {' / '}
+          <Link activeClassName="is-active" to="/music">
+            Music
+          </Link>{' '}
+          {' /// '}
+          {selfLinks.map(({ label, href, to }, i) => (
             <span key={label}>
-              <a href={href} target="blank" rel="noopener noreferrer">
-                {label}
-              </a>
+              {href && (
+                <a href={href} target="blank" rel="noopener noreferrer">
+                  {label}
+                </a>
+              )}
+              {to && (
+                <Link to={to} target="blank" rel="noopener noreferrer">
+                  {label}
+                </Link>
+              )}
               {i < selfLinks.length - 1 && ' / '}
             </span>
           ))}

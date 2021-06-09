@@ -26,6 +26,10 @@
   background: var(--white);
 }
 
+.is-active {
+  color: var(--primary);
+}
+
 iframe {
   border: none;
   margin: 0;
@@ -67,6 +71,12 @@ a:focus {
 
 a:hover {
   outline: none;
+}
+
+h2 {
+  font-family: 'Source Serif Pro', Helvetica, sans-serif;
+  font-size: 3em;
+  color: var(--white);
 }
 
 h3 {
@@ -135,7 +145,20 @@ video {
   padding: 1em;
   font-size: 1em;
   line-height: 1.1;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.text--monospace {
+  font-weight: normal;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.text--monospace {
+  text-transform: uppercase;
+}
+
+.border--dashed {
+  border: 2px dashed var(--white);
 }
 
 .SiteWrapper {
