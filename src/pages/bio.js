@@ -11,8 +11,27 @@ export default ({ data }) => {
       <HeaderV2 />
       <div className="row">
         <div className="col-6">
-          <p>Hello! I make things with sound and code.</p>
+          {/* <p>Hello! I make things with sound and code.</p> */}
           <p>
+            Hello! I make things with sound and code.{' '}
+            {/* Through my work I aim to
+            produce new ways of interfacing with and learning about sound and
+            technology. */}
+          </p>
+          <p>
+            I develop playful music-making interfaces that allow both seasoned
+            musicians and people who have never worked with sound to create and
+            learn about music in unique ways.
+          </p>
+          <p>
+            With{' '}
+            <a href="https://noncoreprojector.com" target="blank">
+              NonCoreProjector
+            </a>{' '}
+            I work with web technologies and public APIs to expose how data is
+            interconnected in both logical and illogical ways.
+          </p>
+          {/* <p>
             Check out{' '}
             <a href="https://noncoreprojector.com" target="blank">
               NonCoreProjector
@@ -22,7 +41,7 @@ export default ({ data }) => {
               Obstacle
             </a>
             's latest release.
-          </p>
+          </p> */}
         </div>
         <div className="col-6">
           <p>

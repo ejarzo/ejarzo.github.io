@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 export default () => {
-  const { bannerImage, coverImage } = useStaticQuery(graphql`
+  const { bannerImage, coverImage, exhibitionImage } = useStaticQuery(graphql`
     query {
       bannerImage: file(relativePath: { eq: "tirtha-banner-2.jpg" }) {
         childImageSharp {
@@ -20,6 +20,13 @@ export default () => {
           }
         }
       }
+      exhibitionImage: file(relativePath: { eq: "tirtha-exhibition.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
   return (
@@ -28,6 +35,10 @@ export default () => {
         title="Tirtha: An Architectural Opera"
         bannerImage={bannerImage}
         links={[
+          {
+            label: 'Visit Exhibition (Venice)',
+            href: 'http://timespaceexistence.com/exhibition/',
+          },
           {
             label: 'View Design Project',
             href:
@@ -40,6 +51,18 @@ export default () => {
         ]}
         Content={() => (
           <div>
+            <p className="border--dashed" style={{ padding: '1em' }}>
+              <Img
+                style={{ marginBottom: '1em' }}
+                fluid={exhibitionImage.childImageSharp.fluid}
+              />
+              You can see Tirtha in person at the{' '}
+              <a href="http://timespaceexistence.com/exhibition/">
+                TIME SPACE EXISTENCE
+              </a>{' '}
+              exhibition, which runs from May 22nd - Nov 21th, 2021 at the
+              Palazzo Bembo in Venice Italy.
+            </p>
             <p>
               <em>Tirtha: An Architectural Opera</em> is a cross-disciplinary,
               collaborative effort to present architecture as a multimedia
