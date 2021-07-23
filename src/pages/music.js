@@ -45,6 +45,38 @@ const meLinks = [
 export default () => {
   const entries = [
     {
+      date: 'July 23, 2021',
+      title: 'Jarz0 — Aggregator',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/track/aggregator',
+        },
+        {
+          label: 'Spotify',
+          href:
+            'https://open.spotify.com/track/2MQff7ujgvTDKVHMxN0WZY?si=32f573ab8fed43a0',
+        },
+        {
+          label: 'Other',
+          href: 'https://linktr.ee/jarz0',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=2866174077/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/track/aggregator">
+              Aggregator by Jarz0
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'Feb 5, 2021',
       title: 'Obstacle — Premonition',
       links: [
