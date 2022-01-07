@@ -9,27 +9,35 @@ export default ({ data }) => {
     <SiteWrapper>
       <SEO title="Bio" />
       <HeaderV2 />
+
       <div className="row">
         <div className="col-6">
-          {/* <p>Hello! I make things with sound and code.</p> */}
           <p>
-            Hello! I make things with sound and code.{' '}
-            {/* Through my work I aim to
-            produce new ways of interfacing with and learning about sound and
-            technology. */}
+            Hello! I make things with sound and code, often inspired by geometry
+            and natural patterns.
           </p>
           <p>
-            I develop playful music-making interfaces that allow both seasoned
-            musicians and people who have never worked with sound to create and
-            learn about music in unique ways.
+            I develop music-making interfaces that encourage sonic exploration
+            regardless of musical background.
           </p>
           <p>
-            With{' '}
+            I work with{' '}
             <a href="https://noncoreprojector.com" target="blank">
               NonCoreProjector
             </a>{' '}
-            I work with web technologies and public APIs to expose how data is
-            interconnected in both logical and illogical ways.
+            to expose how data is interconnected in both logical and illogical
+            ways.
+          </p>
+          <p>
+            I release music as{' '}
+            <a href="https://linktr.ee/jarz0" target="blank">
+              Jarz0
+            </a>{' '}
+            and with the band{' '}
+            <a href="https://www.instagram.com/obstaclemusic/" target="blank">
+              Obstacle
+            </a>
+            .
           </p>
           {/* <p>
             Check out{' '}

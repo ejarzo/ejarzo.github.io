@@ -45,6 +45,36 @@ const meLinks = [
 export default () => {
   const entries = [
     {
+      date: 'Nov 12, 2021',
+      title: 'Jarz0 — Err',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/track/err',
+        },
+        {
+          label: 'Spotify',
+          href:
+            'https://open.spotify.com/track/6T0G68Qt036otVsmhoHWSz?si=8f7d00ea289a4ba6',
+        },
+        {
+          label: 'Other',
+          href: 'https://linktr.ee/jarz0',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=554973738/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/track/err">Err by Jarz0</a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'July 23, 2021',
       title: 'Jarz0 — Aggregator',
       links: [
@@ -76,6 +106,7 @@ export default () => {
         </div>
       ),
     },
+
     {
       date: 'Feb 5, 2021',
       title: 'Obstacle — Premonition',
@@ -185,7 +216,8 @@ export default () => {
       <div className="row border--dashed" style={{ marginBottom: '2rem' }}>
         <div className="col-12">
           <p>
-            My Music:{' '}
+            Solo work
+            <br />
             {meLinks.map(({ label, href }, i) => (
               <span>
                 <a href={href} target="blank">
@@ -196,7 +228,9 @@ export default () => {
             ))}
           </p>
           <p style={{ margin: 0 }}>
-            My Band's Music:{' '}
+            Obstacle (with{' '}
+            <a href="https://www.anniemurnighan.com/">Annie Murnighan</a> and{' '}
+            <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
             {obstacleLinks.map(({ label, href }, i) => (
               <span>
                 <a href={href} target="blank">

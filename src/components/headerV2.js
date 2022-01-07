@@ -23,7 +23,15 @@ export default React.memo(() => {
               baseFrequency={`${Math.random() * 0.09} ${Math.random() * 0.09}`}
               numOctaves="1"
               result="warp"
-            ></feTurbulence>
+            >
+              {/* <animate
+                attributeName="baseFrequency"
+                from=".01"
+                to=".1"
+                dur="50s"
+                repeatCount="indefinite"
+              /> */}
+            </feTurbulence>
             <feDisplacementMap
               xChannelSelector="R"
               yChannelSelector="G"

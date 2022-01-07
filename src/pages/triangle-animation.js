@@ -22,7 +22,7 @@ export default () => {
         links={[
           {
             label: 'Watch on Vimeo',
-            href: 'https://vimeo.com/video/483319830',
+            href: 'https://vimeo.com/483319830',
           },
         ]}
         Content={() => (

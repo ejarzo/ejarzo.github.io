@@ -41,9 +41,9 @@ export default props => {
             style={{
               userSelect: 'none',
               objectFit: 'cover',
-              // filter: 'blur(100px) brightness(0.3)',
-              filter: 'brightness(0.3)',
-              opacity: 0.5,
+              filter: 'blur(200px) brightness(0.6) saturate(0.8)',
+              // filter: 'brightness(0.3)',
+              // opacity: 0.9,
               width: '100%',
               height: '100%',
             }}

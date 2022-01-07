@@ -18,6 +18,8 @@ export default () => {
     additiveSynthBanner,
     triangleAnimationBanner,
     abacusynthBanner,
+    punctureBanner,
+    pendularBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -103,6 +105,20 @@ export default () => {
           }
         }
       }
+      punctureBanner: file(relativePath: { eq: "puncture-banner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pendularBanner: file(relativePath: { eq: "pendular-banner-1.JPG" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -113,75 +129,160 @@ export default () => {
 
   const links = [
     {
+      title: 'Pendular',
+      imgFluid: pendularBanner,
+      info: 'Collaborative Performance/Musical Interface, 2021',
+      to: '/pendular',
+    },
+    {
+      title: 'Puncture',
+      imgFluid: punctureBanner,
+      info: 'Collaborative Performance/Musical Interface, 2021',
+      to: '/puncture',
+    },
+    {
       title: 'Abacusynth',
-      imgFluid: abacusynthBanner.childImageSharp.fluid,
+      imgFluid: abacusynthBanner,
       info: 'Web/Audio, 2021',
       to: '/abacusynth',
     },
     {
       title: 'Tirtha: An Architectural Opera',
-      imgFluid: tirthaBanner.childImageSharp.fluid,
+      imgFluid: tirthaBanner,
       info: 'Album/Multimedia, 2020',
       to: '/tirtha',
       imgAttribution: 'Image by Office of Uncertainty Research',
     },
     {
       title: 'Musical Garden',
-      imgFluid: musicalGardenBanner.childImageSharp.fluid,
+      imgFluid: musicalGardenBanner,
       info: 'Web/Audio, 2020',
       to: '/musical-garden',
     },
     {
       title: 'Shape Your Music',
-      imgFluid: symBanner.childImageSharp.fluid,
+      imgFluid: symBanner,
       info: 'Web/Audio, Ongoing',
       to: '/shape-your-music',
     },
     {
       title: '◣',
-      imgFluid: triangleAnimationBanner.childImageSharp.fluid,
+      imgFluid: triangleAnimationBanner,
       info: 'Animation, 2020',
       to: '/triangle-animation',
+      belowFold: true,
     },
     {
       title: 'Texturizer',
-      imgFluid: texturizerBanner.childImageSharp.fluid,
+      imgFluid: texturizerBanner,
       info: 'Web/Generative, 2020',
       to: '/texturizer',
+      belowFold: true,
     },
     {
       title: 'Drum Radar',
-      imgFluid: drumRadarBanner.childImageSharp.fluid,
+      imgFluid: drumRadarBanner,
       info: 'Web/Audio, 2020',
       to: '/drum-radar',
+      belowFold: true,
     },
     {
       title: 'Web Synthesizer',
-      imgFluid: additiveSynthBanner.childImageSharp.fluid,
+      imgFluid: additiveSynthBanner,
       info: 'Web/Audio, 2020',
       to: '/web-synthesizer',
+      belowFold: true,
     },
     {
       title: 'Vec Tor Bel',
-      imgFluid: vecTorBelBanner.childImageSharp.fluid,
+      imgFluid: vecTorBelBanner,
       info: 'Installation, 2018',
       to: '/vec-tor-bel',
       imgAttribution: 'Photo courtesy of False Flag Gallery',
     },
     {
       title: 'Verbolect',
-      imgFluid: verbolectBanner.childImageSharp.fluid,
+      imgFluid: verbolectBanner,
       info: 'Installation, 2017',
       to: '/verbolect',
       imgAttribution: 'Photo courtesy of Pierogi Gallery',
     },
     {
       title: 'Fiber',
-      imgFluid: fiberBanner.childImageSharp.fluid,
+      imgFluid: fiberBanner,
       info: 'Immersive Experience, 2017',
       to: '/fiber',
+      belowFold: true,
     },
   ];
+
+  const ProjectLink = ({ title, href, info, to, projectIndex }) => {
+    const isHovered = projectIndex === imgIndex;
+    const Wrapper = ({ children }) =>
+      to ? (
+        <Link style={{ display: 'inline-block' }} to={to}>
+          {children}
+        </Link>
+      ) : (
+        <a
+          style={{ display: 'inline-block' }}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      );
+
+    return (
+      <li
+        key={title}
+        onMouseEnter={() => onMouseEnter(projectIndex)}
+        style={{
+          marginBottom: '2em',
+          // background: 'rgba(0, 0, 0, 0.4)',
+          padding: 4,
+          position: 'relative',
+          textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
+        }}
+      >
+        <Wrapper>
+          {isHovered && (
+            <h2
+              style={{
+                margin: 0,
+                position: 'absolute',
+                left: -28,
+                fontFamily: 'Source Serif Pro',
+              }}
+            >
+              {'>'}
+            </h2>
+          )}
+          <h2
+            style={{
+              margin: 0,
+              fontWeight: 'bold',
+              fontFamily: 'Source Serif Pro',
+              textShadow: '0 0 20px 20px rgba(0,0,0,0.1)',
+            }}
+          >
+            {title}
+          </h2>
+          <span
+            style={{
+              fontSize: '0.7em',
+              textTransform: 'uppercase',
+              opacity: 1,
+              fontWeight: '0 !important',
+            }}
+          >
+            {info}
+          </span>
+        </Wrapper>
+      </li>
+    );
+  };
 
   return (
     <SiteWrapper>
@@ -190,131 +291,30 @@ export default () => {
       <HeaderV2 />
 
       <div className="ProjectsV2">
-        <div
-          className="Projects__ImgContainer"
-          style={{
-            position: 'fixed',
-            width: '100vw',
-            height: '100vh',
-            top: 0,
-            left: 0,
-            zIndex: -1,
-            overflow: 'hidden',
-            pointerEvents: 'none',
-            // background: '#222',
-          }}
-        >
+        <div className="Projects__ImgContainer">
           {links.map(({ title, imgFluid }, i) => (
-            <div
-              key={title}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-              }}
-            >
+            <div className="Projects__ImgContainer__ImgWrapper" key={title}>
               <Img
                 className="background--full"
-                fluid={imgFluid}
+                fluid={imgFluid.childImageSharp.fluid}
                 style={{
-                  userSelect: 'none',
-                  objectFit: 'cover',
-                  // filter: 'blur(0px)',
-                  // filter: 'brightness(0.8)',
-                  transition: 'opacity 1s',
-                  width: '100%',
-                  height: '100%',
                   opacity: i === imgIndex ? 1 : 0,
                 }}
               />
             </div>
           ))}
         </div>
-        <div
-          style={{
-            position: 'fixed',
-            textTransform: 'uppercase',
-            bottom: 2,
-            right: 4,
-            fontSize: '0.5em',
-            opacity: 0.9,
-          }}
-        >
+        <div className="Projects__ImgAttribution">
           {links[imgIndex].imgAttribution}
         </div>
         <div className="Projects__List">
           <div>
             <ul>
-              {links.map(({ title, info, to, href }, i) => {
-                const isHovered = i === imgIndex;
-                const Wrapper = ({ children }) =>
-                  to ? (
-                    <Link style={{ display: 'inline-block' }} to={to}>
-                      {children}
-                    </Link>
-                  ) : (
-                    <a
-                      style={{ display: 'inline-block' }}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {children}
-                    </a>
-                  );
-
-                return (
-                  <li
-                    key={title}
-                    onMouseEnter={() => onMouseEnter(i)}
-                    style={{
-                      marginBottom: '2em',
-                      // background: 'rgba(0, 0, 0, 0.4)',
-                      padding: 4,
-                      position: 'relative',
-                      textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
-                    }}
-                  >
-                    <Wrapper>
-                      {isHovered && (
-                        <h2
-                          style={{
-                            margin: 0,
-                            position: 'absolute',
-                            left: -28,
-                            fontFamily: 'Source Serif Pro',
-                          }}
-                        >
-                          {'>'}
-                        </h2>
-                      )}
-                      <h2
-                        style={{
-                          margin: 0,
-                          fontWeight: 'bold',
-                          fontFamily: 'Source Serif Pro',
-                          textShadow: '0 0 20px 20px rgba(0,0,0,0.1)',
-                        }}
-                      >
-                        {title}
-                      </h2>
-                      <span
-                        style={{
-                          fontSize: '0.7em',
-                          textTransform: 'uppercase',
-                          opacity: 1,
-                          fontWeight: '0 !important',
-                        }}
-                      >
-                        {info}
-                      </span>
-                    </Wrapper>
-                  </li>
-                );
-              })}
+              {links.map((linkInfo, i) => (
+                <ProjectLink {...linkInfo} projectIndex={i} />
+              ))}
             </ul>
+            {/* <button>Show More</button> */}
           </div>
         </div>
       </div>
