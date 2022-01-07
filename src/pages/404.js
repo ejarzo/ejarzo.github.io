@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderV2 from '../components/HeaderV2';
+import HeaderV2 from '../components/headerV2';
 
 import SEO from '../components/seo';
 import SiteWrapper from '../components/SiteWrapper';

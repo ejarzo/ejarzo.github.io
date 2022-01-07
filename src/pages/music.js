@@ -65,6 +65,7 @@ export default () => {
       content: (
         <div>
           <iframe
+            title="Err by Jarz0"
             style={{ border: 0, width: '100%', height: 120 }}
             src="https://bandcamp.com/EmbeddedPlayer/track=554973738/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
             seamless
@@ -95,6 +96,7 @@ export default () => {
       content: (
         <div>
           <iframe
+            title="Aggregator by Jarz0"
             style={{ border: 0, width: '100%', height: 120 }}
             src="https://bandcamp.com/EmbeddedPlayer/track=2866174077/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
             seamless
@@ -124,6 +126,7 @@ export default () => {
       content: (
         <div>
           <iframe
+            title="Premonition by Obstacle"
             style={{ border: 0, width: '100%', height: 120 }}
             src="https://bandcamp.com/EmbeddedPlayer/album=2038906525/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
             seamless
@@ -195,6 +198,7 @@ export default () => {
             <Link to="/tirtha">here</Link>.
           </p>
           <iframe
+            title="Tirtha by Jarz0"
             style={{ border: 0, width: 700, height: 472 }}
             src="https://bandcamp.com/EmbeddedPlayer/album=1692777687/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/"
             seamless

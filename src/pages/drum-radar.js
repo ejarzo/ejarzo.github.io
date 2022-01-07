@@ -38,7 +38,7 @@ export default () => {
             </p>
             <p>
               <iframe
-                title="Triangle Animation"
+                title="Drum Radar Demo"
                 src="https://player.vimeo.com/video/505089921?color=eae6de"
                 width="100%"
                 height="700"
