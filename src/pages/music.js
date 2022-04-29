@@ -45,6 +45,33 @@ const meLinks = [
 export default () => {
   const entries = [
     {
+      date: 'Apr 22, 2022',
+      title: 'Various Artists — Abacusynth Compilation',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/album/abacusynth-compilation',
+        },
+      ],
+      content: (
+        <div>
+          <p>
+            A compilation of songs made using the{' '}
+            <Link to="/abacusynth-plugin">Abacusynth</Link> Plugin.
+          </p>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=752206847/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/album/abacusynth-compilation">
+              Abacusynth Compilation by Various Artists
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'Feb 25, 2022',
       title: 'Jarz0 — By the Time',
       links: [
