@@ -119,7 +119,7 @@ export default () => {
             href: 'https://github.com/ejarzo/pendular',
           },
           {
-            label: 'Process Documentation',
+            label: 'Documentation',
             href: 'https://itp.eliasjarzombek.com/nime-pendular/',
           },
         ]}
@@ -136,33 +136,57 @@ export default () => {
               <a href="https://yiranwang.art/">Marcel Wang</a> as part of the
               ITP's NIME class.
             </p>
+
             <p>
-              It is an interactive musical system that explores the physical
-              motion of hanging objects as a method for manipulating sound.
-              Using wind and light, we work in tandem to control the environment
-              in which these objects react. As the objects swing and spin
-              through the air, their movements are interpreted as sonic
-              transformations ranging from calm and predictable to chaotic and
-              random.
-            </p>
-            <p>
-              With our piece we hope to tap into how we are drawn to observing
-              natural movements, such as a balloon flying into the sky, or a
-              pendulum swinging for eternity. These motions give us a glimpse
-              into the infinite interconnected variables that make up our
-              reality and provide us a moment of meditative peace and
-              contemplation. Using a circle and square, the geometric primitives
-              that represent fundamental physical building blocks, we try to
-              capture the sensibility and romance through their interactions and
-              inspire people's imagination and memory through movement and
-              sound.
+              We are naturally drawn to observing movements such as a balloon
+              flying into the sky, or a pendulum swinging in perfect time. These
+              motions give us a glimpse into the infinite interconnected
+              variables that make up our reality. They captivate us in their
+              seeming randomness (when there are too many variables to model) or
+              their predictability (when the system can be accurately
+              represented with mathematical functions). Observing such phenomena
+              provides us with a moment of meditative peace and contemplation,
+              not unlike the feeling you get when listening to music you love.
+              In our interactive musical system Pendular, we draw a connection
+              between these two sensibilities. The work introduces a method of
+              translating the invisible forces around us into the sonic realm,
+              in an effort to inspire imagination and memory through movement
+              and sound.
             </p>
             <p>
               <Img fluid={circleAndCubeImg.childImageSharp.fluid} />
             </p>
             <p>
+              Pendular's interface consists of two objects — a circle and a cube
+              — suspended from above. As they swing and spin through the air,
+              their movements are tracked by sensors and interpreted as sonic
+              transformations. The geometric primitives — differing in material
+              and weight — highlight the range of expression allowed by the
+              system while also visually representing how sound can be
+              decomposed into simple waveforms. A custom Max/MSP program allows
+              the performer(s) to dynamically map the incoming data to
+              parameters in Ableton Live. We designed the technology to be as
+              non-intrusive as possible, allowing both performer and audience to
+              focus on the interaction.
+            </p>
+            <p>
               <Img fluid={marcelImg.childImageSharp.fluid} />
             </p>
+            <p>
+              Our performance with the interface is structured around the
+              delicate power dynamic between human and natural forces. The
+              musical arrangement reflects this relationship in its combination
+              of organic and inorganic sounds: the disc modulates effects on
+              live vocals while the cube affects the timbre of a synthesizer. We
+              begin by establishing the link between motion and sound: we
+              manipulate the two objects in a predictable manner: pushing,
+              rotating, and shining lights on them in dialogue with the music.
+              We speak lyrics inspired by laws of physics such as Newton's First
+              Law (An object at rest stays at rest and an object in motion stays
+              in motion…) and the Law of Conservation of Energy (The total
+              energy in an isolated system remains constant…).
+            </p>
+
             <p>
               <Img fluid={meImg.childImageSharp.fluid} />
             </p>
@@ -179,37 +203,23 @@ export default () => {
               </video>
             </p>
             <p>
-              We use light and wind to inject natural movement and energy into
-              our performance. The three-dimensional motions of the cube and
-              disk are captured and transmitted to a computer in real-time,
-              where they are transformed into sonic parameters. The cube
-              controls a synthesizer while the circle modulates effects on live
-              vocals.
+              As the performance progresses, we relinquish control and allow
+              natural forces to dictate the narrative. We start using a fan to
+              move the objects. As we adjust the source, direction, and strength
+              of the wind, the trajectory of each object becomes increasingly
+              random and unpredictable. We also activate hanging light sources
+              that shine on the objects as they move in the wind. As our voices
+              — each speaking a different language — blend into an abstract
+              soundscape and the synth sound becomes wild and atonal, our
+              performance then becomes more about responding to the motion than
+              triggering it.
             </p>
             <p>
-              Our lyrics draw from scientific laws such as Newton's Laws of
-              Motion the Law of Conservation of Energy. We each speak in a
-              different language, blending our voices into a soundscape
-              controlled by the objects' movements.
-            </p>
-            <p>
-              <em>
-                An object at rest stays at rest and an object in motion stays in
-                motion with the same speed and in the same direction unless
-                acted upon by an unbalanced force.
-              </em>
-              <br />
-              &mdash; Newton's first Law of Motion
-            </p>
-            <p>
-              <em>
-                The total energy of an isolated system remains constant; it is
-                said to be conserved over time. Energy can neither be created
-                nor destroyed; rather, it can only be transformed or transferred
-                from one form to another.
-              </em>
-              <br />
-              &mdash; Law of Conservation of Energy
+              Through this exchange of roles, Pendular describes not just the
+              natural movement that we see, but also how our mind oscillates
+              between different states, and how the relationships between
+              people, technology, and nature are constantly changing in response
+              to each other.
             </p>
             {/* <p>Motions that are the result of infinite variables</p> */}
             <p>

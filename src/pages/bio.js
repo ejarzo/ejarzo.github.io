@@ -66,7 +66,7 @@ export default ({ data }) => {
             </span>{' '}
           </p>
           <p>
-            I am also on{' '}
+            Or find me on{' '}
             <a href="https://github.com/ejarzo/" target="blank">
               GitHub
             </a>

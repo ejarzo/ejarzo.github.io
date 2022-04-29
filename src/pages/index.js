@@ -20,6 +20,7 @@ export default () => {
     abacusynthBanner,
     punctureBanner,
     pendularBanner,
+    abacusynthPluginBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -119,6 +120,15 @@ export default () => {
           }
         }
       }
+      abacusynthPluginBanner: file(
+        relativePath: { eq: "abcs-screenshot-1-wide-3.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -128,6 +138,12 @@ export default () => {
   };
 
   const links = [
+    {
+      title: 'Abacusynth (Ableton Plugin)',
+      imgFluid: abacusynthPluginBanner,
+      info: 'Max for Live Plugin, 2022',
+      to: '/abacusynth-plugin',
+    },
     {
       title: 'Pendular',
       imgFluid: pendularBanner,
@@ -141,7 +157,7 @@ export default () => {
       to: '/puncture',
     },
     {
-      title: 'Abacusynth',
+      title: 'Abacusynth (Web)',
       imgFluid: abacusynthBanner,
       info: 'Web/Audio, 2021',
       to: '/abacusynth',

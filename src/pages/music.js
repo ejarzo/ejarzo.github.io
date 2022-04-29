@@ -45,6 +45,38 @@ const meLinks = [
 export default () => {
   const entries = [
     {
+      date: 'Feb 25, 2022',
+      title: 'Jarz0 — By the Time',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/track/by-the-time',
+        },
+        {
+          label: 'Spotify',
+          href:
+            'https://open.spotify.com/album/2bdsjIMyDUT6kU55Qgfpm5?si=PhMjnQm8RU2LV9h0-LpWIQ',
+        },
+        {
+          label: 'Other',
+          href: 'https://linktr.ee/jarz0',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=4271709964/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/track/by-the-time">
+              By the Time by Jarz0
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'Nov 12, 2021',
       title: 'Jarz0 — Err',
       links: [
