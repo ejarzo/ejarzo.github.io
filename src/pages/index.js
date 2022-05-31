@@ -21,6 +21,7 @@ export default () => {
     punctureBanner,
     pendularBanner,
     abacusynthPluginBanner,
+    abacusynthHardwareBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -129,6 +130,15 @@ export default () => {
           }
         }
       }
+      abacusynthHardwareBanner: file(
+        relativePath: { eq: "abcs-hardware-banner.jpeg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -138,6 +148,12 @@ export default () => {
   };
 
   const links = [
+    {
+      title: 'Abacusynth (Hardware)',
+      imgFluid: abacusynthHardwareBanner,
+      info: 'Synthesizer, 2022',
+      to: '/abacusynth-hardware',
+    },
     {
       title: 'Abacusynth (Ableton Plugin)',
       imgFluid: abacusynthPluginBanner,
