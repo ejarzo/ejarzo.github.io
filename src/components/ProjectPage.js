@@ -24,7 +24,6 @@ export default props => {
           zIndex: -1,
           overflow: 'hidden',
           pointerEvents: 'none',
-          // background: '#222',
         }}
       >
         <div
@@ -42,8 +41,6 @@ export default props => {
               userSelect: 'none',
               objectFit: 'cover',
               filter: 'blur(200px) brightness(0.6) saturate(0.8)',
-              // filter: 'brightness(0.3)',
-              // opacity: 0.9,
               width: '100%',
               height: '100%',
             }}

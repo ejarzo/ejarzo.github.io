@@ -112,35 +112,51 @@ export default () => {
             </p>
 
             <p>
-              Featured on
+              Featured on{' '}
+              <a href="https://djmag.com/news/student-designs-synthesiser-inspired-abacus-abacusynth">
+                DJ Mag
+              </a>
+              ,{' '}
+              <a href="https://mixmag.net/read/abacus-inspired-synth-student-thesis-mathematical-news">
+                Mixmag
+              </a>
+              ,{' '}
               <a href="https://hackaday.com/2022/06/15/abacus-synthesizer-really-adds-up/">
                 Hackaday
               </a>
-              ,
+              ,{' '}
               <a href="https://musictech.com/news/meet-abacusyth-abacus-inspired-synthesiser/">
                 MusicTech
               </a>
-              ,
+              ,{' '}
               <a href="https://blog.adafruit.com/2022/06/15/abacusynth-hardware-adafruit-johnedgarpark-adafruit/">
                 Adafruit
               </a>
-              ,
+              ,{' '}
               <a href="https://makezine.com/2022/06/16/abacus-synth-abacasynth/">
                 Makezine
               </a>
-              ,
+              ,{' '}
               <a href="https://www.hackster.io/news/elias-jarzombek-s-abacusynth-is-a-casual-creator-device-realized-in-wood-and-clever-electronics-9a7f4b9b7851">
                 Hackster.io
               </a>
-              ,
+              ,{' '}
+              <a href="https://www.creativebrew.io/posts/issue-43/">
+                Creative Brew
+              </a>
+              ,{' '}
               <a href="https://www.gearnews.com/abacusynth-spinning-wheels-of-synthesis-in-a-digital-physical-hybrid/">
                 Gearnews
               </a>
-              ,
+              ,{' '}
+              <a href="https://playtusu.com/haber/2022/06/abakusten-ilham-alan-synthesizeri-dinlemelere-doyamiyoruz/">
+                Playtusu
+              </a>
+              ,{' '}
               <a href="https://www.keyboards.de/stories/interagieren-mit-dem-abacusynth/">
                 Keyboards DE
               </a>
-              .
+              .{' '}
             </p>
             <p>
               Abacuysnth is a synthesizer inspired by an{' '}
