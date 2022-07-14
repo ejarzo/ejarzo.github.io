@@ -69,6 +69,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Texturizer"
+        description="A site that generates moving textures from random stock images"
         bannerImage={bannerImage}
         links={[
           { label: 'Visit Site', href: 'https://texturizer.netlify.app' },

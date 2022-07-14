@@ -111,6 +111,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Pendular"
+        description="A collaborative performance with artist Marcel Yiran Wang using a custom-built musical interface"
         bannerImage={bannerImage}
         links={[
           { label: 'Watch Performance', href: 'https://vimeo.com/662058424' },

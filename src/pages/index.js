@@ -5,6 +5,75 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import HeaderV2 from '../components/headerV2';
 
+const ProjectLink = ({ title, href, info, to, isHovered, onMouseEnter }) => {
+  const Wrapper = ({ children }) =>
+    to ? (
+      <Link style={{ display: 'inline-block' }} to={to}>
+        {children}
+      </Link>
+    ) : (
+      <a
+        style={{ display: 'inline-block' }}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+
+  return (
+    <li
+      key={title}
+      onMouseEnter={() => onMouseEnter(to)}
+      style={{
+        marginBottom: '3em',
+        // background: 'rgba(0, 0, 0, 0.4)',
+        padding: 4,
+        position: 'relative',
+        textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
+      }}
+    >
+      <Wrapper>
+        {isHovered && (
+          <h2
+            style={{
+              margin: 0,
+              position: 'absolute',
+              left: -28,
+              fontFamily: 'Source Serif Pro',
+              fontWeight: 'bold',
+            }}
+          >
+            {'>'}
+          </h2>
+        )}
+        <h2
+          style={{
+            margin: 0,
+            fontWeight: 'bold',
+            fontFamily: 'Source Serif Pro',
+            textShadow: '0 0 20px 20px rgba(0,0,0,0.1)',
+          }}
+        >
+          {title}
+        </h2>
+        <span
+          style={{
+            fontSize: '0.8em',
+            textTransform: 'uppercase',
+            opacity: 1,
+            fontWeight: 'bold',
+            textShadow: '0 0 1px 1px rgba(0,0,0,0.6)',
+          }}
+        >
+          {info}
+        </span>
+      </Wrapper>
+    </li>
+  );
+};
+
 export default () => {
   const {
     vecTorBelBanner,
@@ -22,10 +91,11 @@ export default () => {
     pendularBanner,
     abacusynthPluginBanner,
     abacusynthHardwareBanner,
+    rltvBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
-        relativePath: { eq: "triangle-animation-banner.png" }
+        relativePath: { eq: "triangle-animation-banner-2.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 2400, quality: 100) {
@@ -139,15 +209,23 @@ export default () => {
           }
         }
       }
+      rltvBanner: file(relativePath: { eq: "rltv/rltv-banner.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2400, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
-  const [imgIndex, setImgIndex] = useState(0);
-  const onMouseEnter = i => {
-    setImgIndex(i);
-  };
-
   const links = [
+    {
+      title: 'Rec Lobe TV',
+      imgFluid: rltvBanner,
+      info: 'Multimedia Installation, 2022',
+      to: '/rec-lobe-tv',
+    },
     {
       title: 'Abacusynth (Hardware)',
       imgFluid: abacusynthHardwareBanner,
@@ -194,13 +272,13 @@ export default () => {
     {
       title: 'Shape Your Music',
       imgFluid: symBanner,
-      info: 'Web/Audio, Ongoing',
+      info: 'Web/Audio, 2016',
       to: '/shape-your-music',
     },
     {
       title: '◣',
       imgFluid: triangleAnimationBanner,
-      info: 'Animation, 2020',
+      info: 'Animation Experiment, 2020',
       to: '/triangle-animation',
       belowFold: true,
     },
@@ -239,113 +317,79 @@ export default () => {
       to: '/verbolect',
       imgAttribution: 'Photo courtesy of Pierogi Gallery',
     },
-    {
-      title: 'Fiber',
-      imgFluid: fiberBanner,
-      info: 'Immersive Experience, 2017',
-      to: '/fiber',
-      belowFold: true,
-    },
+    // {
+    //   title: 'Fiber',
+    //   imgFluid: fiberBanner,
+    //   info: 'Immersive Experience, 2017',
+    //   to: '/fiber',
+    //   belowFold: true,
+    // },
   ];
 
-  const ProjectLink = ({ title, href, info, to, projectIndex }) => {
-    const isHovered = projectIndex === imgIndex;
-    const Wrapper = ({ children }) =>
-      to ? (
-        <Link style={{ display: 'inline-block' }} to={to}>
-          {children}
-        </Link>
-      ) : (
-        <a
-          style={{ display: 'inline-block' }}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      );
-
-    return (
-      <li
-        key={title}
-        onMouseEnter={() => onMouseEnter(projectIndex)}
-        style={{
-          marginBottom: '2em',
-          // background: 'rgba(0, 0, 0, 0.4)',
-          padding: 4,
-          position: 'relative',
-          textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        <Wrapper>
-          {isHovered && (
-            <h2
-              style={{
-                margin: 0,
-                position: 'absolute',
-                left: -28,
-                fontFamily: 'Source Serif Pro',
-              }}
-            >
-              {'>'}
-            </h2>
-          )}
-          <h2
-            style={{
-              margin: 0,
-              fontWeight: 'bold',
-              fontFamily: 'Source Serif Pro',
-              textShadow: '0 0 20px 20px rgba(0,0,0,0.1)',
-            }}
-          >
-            {title}
-          </h2>
-          <span
-            style={{
-              fontSize: '0.7em',
-              textTransform: 'uppercase',
-              opacity: 1,
-              fontWeight: '0 !important',
-            }}
-          >
-            {info}
-          </span>
-        </Wrapper>
-      </li>
-    );
-  };
+  const [hoveredLink, setHoveredLink] = useState(links[0].to);
+  const [showMore, setShowMore] = useState(false);
+  const { imgAttribution } = links.find(l => l.to === hoveredLink) || {};
 
   return (
     <SiteWrapper>
-      <SEO title="Projects" />
-
+      <SEO title="Projects" description="My latest works" />
       <HeaderV2 />
 
       <div className="ProjectsV2">
         <div className="Projects__ImgContainer">
-          {links.map(({ title, imgFluid }, i) => (
+          {links.map(({ title, imgFluid, to }, i) => (
             <div className="Projects__ImgContainer__ImgWrapper" key={title}>
               <Img
                 className="background--full"
                 fluid={imgFluid.childImageSharp.fluid}
                 style={{
-                  opacity: i === imgIndex ? 1 : 0,
+                  opacity: to === hoveredLink ? 1 : 0,
                 }}
               />
             </div>
           ))}
         </div>
-        <div className="Projects__ImgAttribution">
-          {links[imgIndex].imgAttribution}
-        </div>
+        <div className="Projects__ImgAttribution">{imgAttribution}</div>
         <div className="Projects__List">
           <div>
             <ul>
-              {links.map((linkInfo, i) => (
-                <ProjectLink {...linkInfo} projectIndex={i} />
-              ))}
+              {links
+                // .filter(({ belowFold }) => !belowFold)
+                .map((linkInfo, i) => (
+                  <ProjectLink
+                    onMouseEnter={to => {
+                      setHoveredLink(to);
+                    }}
+                    {...linkInfo}
+                    isHovered={linkInfo.to === hoveredLink}
+                    projectIndex={i}
+                  />
+                ))}
             </ul>
+            {/* <button
+              style={{
+                border: '2px solid white',
+                borderRadius: 2,
+                background: 'none',
+                cursor: 'pointer',
+                padding: '10px 20px',
+                color: 'white',
+              }}
+              onClick={() => {
+                setShowMore(!showMore);
+              }}
+            >
+              More
+            </button> */}
+            {showMore && (
+              <ul style={{ marginTop: 50 }}>
+                {links
+                  .filter(({ belowFold }) => belowFold)
+                  .map((linkInfo, i) => (
+                    <ProjectLink {...linkInfo} projectIndex={i} />
+                  ))}
+              </ul>
+            )}
             {/* <button>Show More</button> */}
           </div>
         </div>

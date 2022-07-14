@@ -94,6 +94,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Abacusynth (Hardware)"
+        description="A synthesizer inspired by an Abacus"
         bannerImage={img5}
         // bannerHeight={500}
         // links={[

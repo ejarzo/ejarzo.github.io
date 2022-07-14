@@ -41,6 +41,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Verbolect"
+        description="A live-updating installation by Noncore Projector that explores a conversation between Cleverbot and itself"
         bannerImage={bannerImage}
         links={[
           { label: 'Project Website', href: 'http://verbolect.com/' },

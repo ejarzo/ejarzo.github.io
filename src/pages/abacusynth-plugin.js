@@ -20,6 +20,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Abacusynth (Ableton Plugin)"
+        description="A plugin for Ableton Live inspired by an Abacus"
         bannerImage={bannerImage}
         links={[
           {

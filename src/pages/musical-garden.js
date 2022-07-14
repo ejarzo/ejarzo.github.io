@@ -35,6 +35,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Musical Garden"
+        description="The Musical Garden is an experiment in making music by planting and tending to a virtual garden."
         bannerImage={bannerImage}
         links={[
           { label: 'Visit Site', href: 'https://musical-garden.netlify.app' },

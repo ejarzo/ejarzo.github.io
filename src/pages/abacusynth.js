@@ -20,6 +20,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Abacusynth"
+        description="A web synthesizer inspired by an abacus"
         bannerImage={bannerImage}
         links={[
           { label: 'Visit Site', href: 'https://abacusynth.netlify.app' },

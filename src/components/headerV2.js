@@ -47,11 +47,14 @@ export default React.memo(() => {
         style={{
           marginBottom: 50,
           paddingBottom: 20,
-          borderBottom: '1px solid white',
+          borderBottom: '1px solid var(--white)',
           textAlign: 'right',
         }}
       >
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link
+          to="/"
+          style={{ textDecoration: 'none', display: 'inline-block' }}
+        >
           <h1 className="HomeLink">Elias Jarzombek</h1>
         </Link>
         <div

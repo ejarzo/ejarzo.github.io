@@ -54,6 +54,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Vec Tor Bel"
+        description="A live-updating installation following a conversation between a chatbot and itself"
         bannerImage={bannerImage}
         links={[
           { label: 'Code', href: 'https://github.com/ejarzo/vec-tor-bel' },

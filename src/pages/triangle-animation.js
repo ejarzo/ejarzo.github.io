@@ -5,7 +5,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 export default () => {
   const { bannerImage } = useStaticQuery(graphql`
     query {
-      bannerImage: file(relativePath: { eq: "triangle-animation-banner.png" }) {
+      bannerImage: file(
+        relativePath: { eq: "triangle-animation-banner-2.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 2400) {
             ...GatsbyImageSharpFluid
@@ -18,6 +20,7 @@ export default () => {
     <div>
       <ProjectPage
         title="◣"
+        description="An experiment in animation"
         bannerImage={bannerImage}
         links={[
           {

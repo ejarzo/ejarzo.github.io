@@ -33,6 +33,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Tirtha: An Architectural Opera"
+        description="Tirtha is a cross-disciplinary, collaborative effort to present architecture as a multimedia experience"
         bannerImage={bannerImage}
         links={[
           {

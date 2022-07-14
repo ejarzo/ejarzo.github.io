@@ -28,6 +28,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Shape Your Music"
+        description="A web application that allows you to make music by drawing and manipulating shapes"
         bannerImage={bannerImage}
         links={[
           { label: 'Visit Site', href: 'https://shapeyourmusic.dev' },

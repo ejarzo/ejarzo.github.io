@@ -7,12 +7,16 @@ import HeaderV2 from './headerV2.js';
 import BackgroundImage from 'gatsby-background-image';
 
 export default props => {
-  const { title, links, Content, bannerImage } = props;
+  const { title, links, Content, bannerImage, description } = props;
   const heroHeight = 420;
 
   return (
-    <div>
-      <SEO title={title} />
+    <div className="ProjectPage">
+      <SEO
+        title={title}
+        description={description}
+        image={bannerImage.childImageSharp.fluid.src}
+      />
       <div
         className="Projects__ImgContainer"
         style={{
@@ -62,6 +66,7 @@ export default props => {
             backgroundRepeat: 'none',
             backgroundSize: `cover`,
             backgroundPosition: `center`,
+            // opacity: 0,
           }}
         >
           <div
@@ -73,7 +78,7 @@ export default props => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 20px 130px -20px rgba(247, 153, 33, 0.3)',
+              // boxShadow: '0 20px 130px -20px rgba(247, 153, 33, 0.3)',
             }}
           >
             <h1

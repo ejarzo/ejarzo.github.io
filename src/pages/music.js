@@ -273,13 +273,13 @@ export default () => {
 
   return (
     <SiteWrapper>
-      <SEO title="Music" />
+      <SEO title="Music" description="My latest music" />
       <HeaderV2 />
 
       <div className="row border--dashed" style={{ marginBottom: '2rem' }}>
         <div className="col-12">
           <p>
-            Solo work
+            <strong style={{ fontSize: '1.5em' }}>Solo Work</strong>
             <br />
             {meLinks.map(({ label, href }, i) => (
               <span>
@@ -291,7 +291,7 @@ export default () => {
             ))}
           </p>
           <p style={{ margin: 0 }}>
-            Obstacle (with{' '}
+            <strong style={{ fontSize: '1.5em' }}>Obstacle</strong> (with{' '}
             <a href="https://www.anniemurnighan.com/">Annie Murnighan</a> and{' '}
             <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
             {obstacleLinks.map(({ label, href }, i) => (

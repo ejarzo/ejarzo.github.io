@@ -1,7 +1,7 @@
 :root {
   --white: #eee4d5;
-  --primary: rgb(214, 158, 37);
-  --primary-light: rgb(248, 198, 90);
+  --primary: rgb(208, 164, 68);
+  --primary-light: rgb(245, 230, 197);
   --gray-lighter: #eee;
   --gray-light: #ccc;
   --black: #201f1c;
@@ -134,16 +134,21 @@ p a {
   /* border-bottom: 2px solid var(--gray-light); */
   display: inline-block;
   color: var(--primary);
-  background: rgba(0, 0, 0, 0.1);
+  /* background: rgba(0, 0, 0, 0.1); */
 }
 
 p a:hover {
   font-weight: normal;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--black);
   color: var(--primary-light);
   /* border-color: var(--black); */
 }
 
+figcaption {
+  text-align: center;
+  font-style: italic;
+  padding-top: 0.5em;
+}
 ul {
   /* list-style: none; */
   /* margin: 0; */
@@ -176,11 +181,20 @@ video {
 }
 
 .border--dashed {
-  border: 2px dashed var(--white);
+  /* border: 2px dashed var(--white); */
+  background: var(--white);
+  color: var(--black) !important;
+}
+.border--dashed p {
+  color: var(--black);
+}
+.border--dashed a {
+  color: var(--black);
+  background: none;
 }
 
 .SiteWrapper {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 0 40px;
@@ -200,6 +214,19 @@ video {
   margin-top: 0;
 }
 
+/* .ProjectPage p {
+  max-width: 1000px;
+  margin: 2em auto;
+}
+
+header {
+  max-width: 1000px;
+  margin: 0em auto;
+}
+.ProjectsV2 {
+  max-width: 1000px;
+  margin: 0em auto;
+} */
 .ProjectPage__Title {
   font-size: 5em;
   margin-top: 170px;

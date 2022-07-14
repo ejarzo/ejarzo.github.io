@@ -7,14 +7,14 @@ import HeaderV2 from '../components/headerV2.js';
 export default ({ data }) => {
   return (
     <SiteWrapper>
-      <SEO title="Bio" />
+      <SEO title="Bio" description="About me / contact info" />
       <HeaderV2 />
 
       <div className="row">
         <div className="col-6">
           <p>
-            Hello! I make things with sound and code, often inspired by geometry
-            and natural patterns.
+            Hello! I make things with sound, code and electronics, and am often
+            inspired by geometry and natural patterns in my work.
           </p>
           <p>
             I develop music-making interfaces that encourage sonic exploration
