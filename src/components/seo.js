@@ -27,6 +27,7 @@ function SEO({ description, lang, meta, title, image }) {
 
   const metaDescription = description || site.siteMetadata.description;
 
+  const baseUrl = 'https://eliasjarzombek.com/';
   return (
     <Helmet
       htmlAttributes={{
@@ -37,7 +38,7 @@ function SEO({ description, lang, meta, title, image }) {
       meta={[
         {
           name: `image`,
-          content: image || null,
+          content: image ? `${baseUrl}${image}` : null,
         },
         {
           name: `description`,
@@ -56,6 +57,10 @@ function SEO({ description, lang, meta, title, image }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: image ? `${baseUrl}${image}` : null,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -69,7 +74,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:image`,
-          content: image || null,
+          content: image ? `${baseUrl}${image}` : null,
         },
         {
           name: `twitter:description`,

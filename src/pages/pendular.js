@@ -139,6 +139,18 @@ export default () => {
             </p>
 
             <p>
+              We've performed at ITP NIME 2021,{' '}
+              <a href="https://eis.nyc">
+                NYC Electroacoustic Improvisation Summit
+              </a>
+              , and{' '}
+              <a href="https://dl.acm.org/doi/10.1145/3537972.3538021">
+                MOCO 22
+              </a>
+              .
+            </p>
+
+            <p>
               We are naturally drawn to observing movements such as a balloon
               flying into the sky, or a pendulum swinging in perfect time. These
               motions give us a glimpse into the infinite interconnected
