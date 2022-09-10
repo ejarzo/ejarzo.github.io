@@ -113,13 +113,21 @@ export default () => {
             </p>
 
             <p>
-              Featured on{' '}
+              Featured in{' '}
               <a href="https://djmag.com/news/student-designs-synthesiser-inspired-abacus-abacusynth">
                 DJ Mag
               </a>
               ,{' '}
+              <a href="https://electronicsound.squarespace.com/shop/p/issue-92">
+                Electronic Sound
+              </a>
+              ,{' '}
               <a href="https://mixmag.net/read/abacus-inspired-synth-student-thesis-mathematical-news">
                 Mixmag
+              </a>
+              ,{' '}
+              <a href="https://www.musicradar.com/news/10-weirdest-musical-instruments">
+                MusicRadar
               </a>
               ,{' '}
               <a href="https://hackaday.com/2022/06/15/abacus-synthesizer-really-adds-up/">
@@ -128,6 +136,10 @@ export default () => {
               ,{' '}
               <a href="https://musictech.com/news/meet-abacusyth-abacus-inspired-synthesiser/">
                 MusicTech
+              </a>
+              ,{' '}
+              <a href="https://www.youtube.com/watch?v=BWQYtBLHDI8&t=496s">
+                The Electromaker Show
               </a>
               ,{' '}
               <a href="https://blog.adafruit.com/2022/06/15/abacusynth-hardware-adafruit-johnedgarpark-adafruit/">
