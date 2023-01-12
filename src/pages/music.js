@@ -26,6 +26,23 @@ const obstacleLinks = [
   },
 ];
 
+const csLinks = [
+  { label: 'Bandcamp', href: 'https://customscenario.bandcamp.com/' },
+  {
+    label: 'Spotify',
+    href:
+      'https://open.spotify.com/artist/1JPX2OvhtUTmpNpD7fkUu5?si=vpgnPtgHQwWch7UlzNEfbg',
+  },
+  {
+    label: 'Apple Music',
+    href: 'https://music.apple.com/us/artist/custom-scenario/1634822469',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/custom_scenario/',
+  },
+];
+
 const meLinks = [
   { label: 'Bandcamp', href: 'https://jarz0.bandcamp.com/' },
   {
@@ -44,6 +61,33 @@ const meLinks = [
 
 export default () => {
   const entries = [
+    {
+      date: 'Jul 29, 2022 ',
+      title: 'Custom Scenario — Runtime',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/track/runtime',
+        },
+        {
+          label: 'Streaming',
+          href: 'https://distrokid.com/hyperfollow/customscenario/runtime',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=2521490290/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/track/runtime">
+              Runtime by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
     {
       date: 'Apr 22, 2022',
       title: 'Various Artists — Abacusynth Compilation',
@@ -290,7 +334,7 @@ export default () => {
               </span>
             ))}
           </p>
-          <p style={{ margin: 0 }}>
+          <p>
             <strong style={{ fontSize: '1.5em' }}>Obstacle</strong> (with{' '}
             <a href="https://www.anniemurnighan.com/">Annie Murnighan</a> and{' '}
             <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
@@ -300,6 +344,18 @@ export default () => {
                   {label}
                 </a>
                 {i < obstacleLinks.length - 1 && ' / '}
+              </span>
+            ))}
+          </p>
+          <p style={{ margin: 0 }}>
+            <strong style={{ fontSize: '1.5em' }}>Custom Scenario</strong> (with{' '}
+            <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
+            {csLinks.map(({ label, href }, i) => (
+              <span>
+                <a href={href} target="blank">
+                  {label}
+                </a>
+                {i < csLinks.length - 1 && ' / '}
               </span>
             ))}
           </p>

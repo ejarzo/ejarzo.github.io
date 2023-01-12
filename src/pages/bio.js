@@ -33,9 +33,13 @@ export default ({ data }) => {
             <a href="https://linktr.ee/jarz0" target="blank">
               Jarz0
             </a>{' '}
-            and with the band{' '}
+            and with the groups{' '}
             <a href="https://www.instagram.com/obstaclemusic/" target="blank">
               Obstacle
+            </a>{' '}
+            and{' '}
+            <a href="https://www.instagram.com/custom_scenario/" target="blank">
+              Custom Scenario
             </a>
             .
           </p>
