@@ -62,7 +62,56 @@ const meLinks = [
 export default () => {
   const entries = [
     {
-      date: 'Jul 29, 2022 ',
+      date: 'August 2022',
+      title: 'Custom Scenario — Live at Sonar Flare',
+      links: [],
+      content: (
+        <div>
+          <iframe
+            width="728"
+            height="410"
+            src="https://www.youtube.com/embed/6BTkf6ANyT4/?t=40"
+            title="Custom Scenario [Sonar Flare 2022]"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ),
+    },
+    ,
+    {
+      date: 'Jan 27, 2023',
+      title: 'Custom Scenario — Given Notice',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/track/given-notice',
+        },
+        {
+          label: 'Streaming',
+          href: 'https://distrokid.com/hyperfollow/customscenario/given-notice',
+        },
+      ],
+      /* 
+      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1422168047/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://customscenario.bandcamp.com/track/given-notice">Given Notice by Custom Scenario</a></iframe>
+      */
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=1422168047/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/track/runtime">
+              Given Notice by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'Jul 29, 2022',
       title: 'Custom Scenario — Runtime',
       links: [
         {
@@ -251,7 +300,7 @@ export default () => {
             width="728"
             height="410"
             src="https://www.youtube.com/embed/wBuoUYoq9aM"
-            title="YouTube video player"
+            title="Obstacle — Live at the Tubs"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen

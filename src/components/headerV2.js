@@ -4,6 +4,10 @@ import Link from 'gatsby-link';
 export default React.memo(() => {
   const selfLinks = [
     {
+      label: 'Plugins',
+      href: 'https://eliasjarzombek.gumroad.com/',
+    },
+    {
       label: 'GitHub',
       href: 'https://github.com/ejarzo/',
     },
