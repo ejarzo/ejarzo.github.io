@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './layout';
 
-export default props => {
+const SiteWrapper = props => {
   const { children } = props;
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -9,3 +9,5 @@ export default props => {
     </div>
   );
 };
+
+export default SiteWrapper;

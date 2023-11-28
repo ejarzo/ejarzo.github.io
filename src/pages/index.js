@@ -4,6 +4,7 @@ import SEO from '../components/seo.js';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import HeaderV2 from '../components/headerV2';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const ProjectLink = ({ title, href, info, to, isHovered, onMouseEnter }) => {
   const Wrapper = ({ children }) =>
@@ -31,7 +32,7 @@ const ProjectLink = ({ title, href, info, to, isHovered, onMouseEnter }) => {
         // background: 'rgba(0, 0, 0, 0.4)',
         padding: 4,
         position: 'relative',
-        textShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
+        textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
       }}
     >
       <Wrapper>
@@ -74,7 +75,7 @@ const ProjectLink = ({ title, href, info, to, isHovered, onMouseEnter }) => {
   );
 };
 
-export default () => {
+const IndexPage = () => {
   const {
     vecTorBelBanner,
     verbolectBanner,
@@ -92,6 +93,9 @@ export default () => {
     abacusynthPluginBanner,
     abacusynthHardwareBanner,
     rltvBanner,
+    traversalBanner,
+    dwoBanner,
+    kishkindhaBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -216,16 +220,33 @@ export default () => {
           }
         }
       }
+      traversalBanner: file(relativePath: { eq: "traversal/Traversal1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 3400, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      dwoBanner: file(relativePath: { eq: "dwo/dwo-banner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 3400, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      kishkindhaBanner: file(
+        relativePath: { eq: "kishkindha/kishkindha-banner-transformed.jpeg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 3400, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
   const links = [
-    {
-      title: 'Rec Lobe TV',
-      imgFluid: rltvBanner,
-      info: 'Multimedia Installation, 2022',
-      to: '/rec-lobe-tv',
-    },
     {
       title: 'Abacusynth (Hardware)',
       imgFluid: abacusynthHardwareBanner,
@@ -233,7 +254,33 @@ export default () => {
       to: '/abacusynth-hardware',
     },
     {
-      title: 'Abacusynth (Ableton Plugin)',
+      title: 'Kishkindha NY',
+      imgFluid: kishkindhaBanner,
+      info: 'Music for Dance, 2023',
+      to: '/kishkindha-ny',
+      imgAttribution: 'Photo by Ludovica Stecher',
+    },
+    {
+      title: 'Traversal',
+      imgFluid: traversalBanner,
+      info: 'Generative Audio/Visual, 2023',
+      to: '/traversal',
+    },
+    {
+      title: 'Rec Lobe TV',
+      imgFluid: rltvBanner,
+      info: 'Multimedia Installation, 2022',
+      to: '/rec-lobe-tv',
+    },
+
+    {
+      title: 'Doors we Open',
+      imgFluid: dwoBanner,
+      info: 'Soundtrack, 2022',
+      to: '/doors-we-open',
+    },
+    {
+      title: 'Abacusynth (Plugin)',
       imgFluid: abacusynthPluginBanner,
       info: 'Max for Live Plugin, 2022',
       to: '/abacusynth-plugin',
@@ -397,3 +444,5 @@ export default () => {
     </SiteWrapper>
   );
 };
+
+export default IndexPage;

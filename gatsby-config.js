@@ -7,6 +7,24 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          // formats: [`auto`, `webp`],
+          // placeholder: `blurred`,
+          quality: 100,
+          // breakpoints: [750, 1080, 1366, 1920],
+          // backgroundColor: `rgba(255,255,255,0.1)`,
+          // tracedSVGOptions: {},
+          // blurredOptions: {},
+          // jpgOptions: {},
+          // pngOptions: {},
+          // webpOptions: {},
+          // avifOptions: {},
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

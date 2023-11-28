@@ -1,9 +1,9 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default () => {
+const VecTorBelPage = () => {
   const {
     bannerImage,
     image1,
@@ -11,40 +11,30 @@ export default () => {
     image3,
     image4,
   } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "vec-tor-bel-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image1: file(relativePath: { eq: "vec-tor-bel1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image2: file(relativePath: { eq: "vec-tor-bel2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image3: file(relativePath: { eq: "vec-tor-bel3.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image4: file(relativePath: { eq: "vec-tor-bel4.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -54,6 +44,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Vec Tor Bel"
+        subtitle="Multimedia Installation, 2018"
         description="A live-updating installation following a conversation between a chatbot and itself"
         bannerImage={bannerImage}
         links={[
@@ -100,10 +91,14 @@ export default () => {
               with images of the installation.
             </p>
             <p className="MediaWrapper">
-              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+              <div
+                style={{
+                  padding: '56.25% 0 0 0',
+                  position: 'relative',
+                }}
+              >
                 <iframe
-                  title="Vec Tor Bel sequence"
-                  src="https://player.vimeo.com/video/302939221?color=eee"
+                  title="Vec Tor Bel Demo"
                   style={{
                     position: 'absolute',
                     top: 0,
@@ -111,8 +106,9 @@ export default () => {
                     width: '100%',
                     height: '100%',
                   }}
+                  src="https://www.youtube.com/embed/Z13n9Cz8sE4?si=weRIV9YU9xCdN33m"
                   frameborder="0"
-                  allow="autoplay; fullscreen"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
               </div>
@@ -132,11 +128,11 @@ export default () => {
               to this initial comment, then uses the response for a subsequent
               search, repeating this cycle through the end of the day.
             </p>
-            <p className="MediaWrapper">
-              <Img fluid={image1.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image1.childImageSharp.gatsbyImageData} />
             </p>
-            <p className="MediaWrapper">
-              <Img fluid={image3.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image3.childImageSharp.gatsbyImageData} />
             </p>
             <p>
               The average color of each video is distilled into a transparent
@@ -149,11 +145,11 @@ export default () => {
               analayzes then ​charts the emotional content of the scanned
               commentary through color, line type, and direction.
             </p>
-            <p className="MediaWrapper">
-              <Img fluid={image2.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image2.childImageSharp.gatsbyImageData} />
             </p>
-            <p className="MediaWrapper">
-              <Img fluid={image4.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image4.childImageSharp.gatsbyImageData} />
             </p>
             <p>
               NonCoreProjector conceives of this new piece as “a series of
@@ -161,19 +157,19 @@ export default () => {
               derailment, evoking increasingly-familiar cultural and political
               interruptions. Bringing together found footage,
               algorithmically-induced uncertainty, and appropriated human
-              commentary, ​<em>Vec Tor Bel</em> ​portrays two ‘intelligences’
+              commentary, <em>Vec Tor Bel</em> portrays two ‘intelligences’
               attempting to make sense of both one another and the world at
               large. In ways both fascinating and terrifying, the slippages that
               perpetually dislodge any emergent logic send us down a Dada-ist
               rabbit hole.
             </p>
             <p>
-              While there are parameters within which ​<em>Vec Tor Bel​</em>{' '}
+              While there are parameters within which <em>Vec Tor Bel</em>{' '}
               operates, the collective forfeits a significant degree of agency,
               yielding unpredictable results. In the spirit of Bruce Conner,
               John Cage, and Yoko Ono, the moment-to-moment outcome cannot be
               anticipated. At once eerily humanistic and undeniably
-              technological, ​Vec Tor Bel​ advances NonCoreProject’s
+              technological, <em>Vec Tor Bel</em> dvances NonCoreProject’s
               investigation of the uncanny entities that hold growing sway over
               our lives - from the causes we embrace to the partners we choose.
             </p>
@@ -183,3 +179,5 @@ export default () => {
     </div>
   );
 };
+
+export default VecTorBelPage;

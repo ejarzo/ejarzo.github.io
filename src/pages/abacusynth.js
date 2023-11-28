@@ -3,14 +3,12 @@ import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
 // import Img from 'gatsby-image';
 
-export default () => {
+const AbacusynthPage = () => {
   const { bannerImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "abacusynth-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -19,7 +17,8 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        title="Abacusynth"
+        title="Abacusynth (Web)"
+        subtitle="Web Synthesizer, 2021"
         description="A web synthesizer inspired by an abacus"
         bannerImage={bannerImage}
         links={[
@@ -42,16 +41,25 @@ export default () => {
               </a>
               .
             </p>
-            <p>
-              <iframe
-                title="Abacusynth Demo"
-                src="https://player.vimeo.com/video/517974442?color=eae6de"
-                width="100%"
-                height="700"
-                frameborder="0"
-                allow="autoplay; fullscreen"
-                allowfullscreen
-              ></iframe>
+            <p className="MediaWrapper">
+              <div style={{ padding: '79% 0 0 0', position: 'relative' }}>
+                <iframe
+                  title="Abacusynth Demo"
+                  src="https://player.vimeo.com/video/517974442?color=eae6de"
+                  width="100%"
+                  height="700"
+                  frameborder="0"
+                  allow="autoplay; fullscreen"
+                  allowfullscreen
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                ></iframe>
+              </div>
             </p>
             <p>
               The interaction is centered on placing shapes on rods. Each rod is
@@ -80,3 +88,5 @@ export default () => {
     </div>
   );
 };
+
+export default AbacusynthPage;

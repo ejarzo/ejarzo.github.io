@@ -51,7 +51,7 @@ export default React.memo(() => {
         style={{
           marginBottom: 50,
           paddingBottom: 20,
-          borderBottom: '1px solid var(--white)',
+          // borderBottom: '1px solid var(--white)',
           textAlign: 'right',
         }}
       >

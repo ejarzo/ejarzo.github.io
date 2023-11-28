@@ -2,13 +2,13 @@ import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import ResponsiveIframe from '../components/ResponsiveIframe';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import video1 from '../video/pendular/cube-spin.mp4';
 import video2 from '../video/pendular/disk-wind.mp4';
 import video3 from '../video/pendular/pendular-computer-screen.mp4';
 import video4 from '../video/pendular/both-swinging.mp4';
 
-export default () => {
+const PendularPage = () => {
   const {
     bannerImage,
     computerScreenImg,
@@ -22,86 +22,64 @@ export default () => {
     cubeImg2,
     cubeImg3,
   } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "pendular-banner-1.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       computerScreenImg: file(
         relativePath: { eq: "pendular-images/pendular-computer-screen.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       meImg: file(relativePath: { eq: "pendular-images/E01.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       marcelImg: file(relativePath: { eq: "pendular-images/marcel.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       circleImg1: file(relativePath: { eq: "pendular-images/circle1.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       circleImg2: file(relativePath: { eq: "pendular-images/circle2.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       cubeImg1: file(relativePath: { eq: "pendular-images/cube1.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       circleAndCubeImg: file(
         relativePath: { eq: "pendular-images/circle-and-cube.JPG" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       circleImg3: file(relativePath: { eq: "pendular-images/circle3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       cubeImg2: file(relativePath: { eq: "pendular-images/cube2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       cubeImg3: file(relativePath: { eq: "pendular-images/cube3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -111,6 +89,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Pendular"
+        subtitle="Collaborative Performance/Musical Interface, 2021"
         description="A collaborative performance with artist Marcel Yiran Wang using a custom-built musical interface"
         bannerImage={bannerImage}
         links={[
@@ -127,17 +106,10 @@ export default () => {
         Content={() => (
           <div>
             <p>
-              <ResponsiveIframe
-                title="'Pendular' performance"
-                src="https://player.vimeo.com/video/662058424?color=eae6de"
-              />
-            </p>
-            <p>
               Pendular is a collaborative piece that I developed with{' '}
               <a href="https://yiranwang.art/">Marcel Wang</a> as part of the
               ITP's NIME class.
             </p>
-
             <p>
               We've performed at ITP NIME 2021,{' '}
               <a href="https://eis.nyc">
@@ -149,7 +121,12 @@ export default () => {
               </a>
               .
             </p>
-
+            <p>
+              <ResponsiveIframe
+                title="'Pendular' performance"
+                src="https://player.vimeo.com/video/662058424?color=eae6de"
+              />
+            </p>
             <p>
               We are naturally drawn to observing movements such as a balloon
               flying into the sky, or a pendulum swinging in perfect time. These
@@ -166,9 +143,11 @@ export default () => {
               in an effort to inspire imagination and memory through movement
               and sound.
             </p>
-            <p>
-              <Img fluid={circleAndCubeImg.childImageSharp.fluid} />
-            </p>
+            <figure>
+              <GatsbyImage
+                image={circleAndCubeImg.childImageSharp.gatsbyImageData}
+              />
+            </figure>
             <p>
               Pendular's interface consists of two objects — a circle and a cube
               — suspended from above. As they swing and spin through the air,
@@ -182,9 +161,9 @@ export default () => {
               non-intrusive as possible, allowing both performer and audience to
               focus on the interaction.
             </p>
-            <p>
-              <Img fluid={marcelImg.childImageSharp.fluid} />
-            </p>
+            <figure>
+              <GatsbyImage image={marcelImg.childImageSharp.gatsbyImageData} />
+            </figure>
             <p>
               Our performance with the interface is structured around the
               delicate power dynamic between human and natural forces. The
@@ -200,10 +179,10 @@ export default () => {
               energy in an isolated system remains constant…).
             </p>
 
-            <p>
-              <Img fluid={meImg.childImageSharp.fluid} />
-            </p>
-            <p>
+            <figure>
+              <GatsbyImage image={meImg.childImageSharp.gatsbyImageData} />
+            </figure>
+            <figure>
               <video
                 controls
                 autoplay="true"
@@ -214,7 +193,7 @@ export default () => {
                 <source src={video4} type="video/mp4" />
                 <track default kind="captions" src="" />
               </video>
-            </p>
+            </figure>
             <p>
               As the performance progresses, we relinquish control and allow
               natural forces to dictate the narrative. We start using a fan to
@@ -235,24 +214,24 @@ export default () => {
               to each other.
             </p>
             {/* <p>Motions that are the result of infinite variables</p> */}
-            <p>
-              <Img fluid={cubeImg2.childImageSharp.fluid} />
-            </p>
-            <p>
+            <figure>
+              <GatsbyImage image={cubeImg2.childImageSharp.gatsbyImageData} />
+            </figure>
+            <figure>
               <video autoplay="true" muted loop style={{ width: '100%' }}>
                 <source src={video1} type="video/mp4" />
                 <track default kind="captions" src="" />
               </video>
-            </p>
-            <p>
-              <Img fluid={circleImg3.childImageSharp.fluid} />
-            </p>
-            <p>
+            </figure>
+            <figure>
+              <GatsbyImage image={circleImg3.childImageSharp.gatsbyImageData} />
+            </figure>
+            <figure>
               <video autoplay="true" muted loop style={{ width: '100%' }}>
                 <source src={video2} type="video/mp4" />
                 <track default kind="captions" src="" />
               </video>
-            </p>
+            </figure>
             <p>
               <strong>Pendular</strong>
               <br />
@@ -299,31 +278,35 @@ export default () => {
               飞行 在找到落点之前
               <br />
             </p>
-            {/* <p>
+            {/* <figure>
               <Img fluid={circleImg1.childImageSharp.fluid} />
               </p>
-              <p>
+              <figure>
               <Img fluid={circleImg2.childImageSharp.fluid} />
-            </p> */}
-            {/* <p>
+            </figure> */}
+            {/* <figure>
               <Img fluid={cubeImg1.childImageSharp.fluid} />
-            </p> */}
-            <p>
-              <Img fluid={cubeImg3.childImageSharp.fluid} />
-            </p>
-            <p>
-              <Img fluid={computerScreenImg.childImageSharp.fluid} />
-            </p>
+            </figure> */}
+            <figure>
+              <GatsbyImage image={cubeImg3.childImageSharp.gatsbyImageData} />
+            </figure>
+            <figure>
+              <GatsbyImage
+                image={computerScreenImg.childImageSharp.gatsbyImageData}
+              />
+            </figure>
 
-            <p>
+            <figure>
               <video autoplay="true" muted loop style={{ width: '100%' }}>
                 <source src={video3} type="video/mp4" />
                 <track default kind="captions" src="" />
               </video>
-            </p>
+            </figure>
           </div>
         )}
       />
     </div>
   );
 };
+
+export default PendularPage;

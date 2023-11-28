@@ -1,9 +1,9 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default () => {
+const Page = () => {
   const {
     bannerImage,
     screenshot1,
@@ -13,54 +13,40 @@ export default () => {
     screenshot5,
     screenshot6,
   } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "texturizer-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot1: file(relativePath: { eq: "texturizer-screenshots/1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot2: file(relativePath: { eq: "texturizer-screenshots/2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot3: file(relativePath: { eq: "texturizer-screenshots/3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot4: file(relativePath: { eq: "texturizer-screenshots/4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot5: file(relativePath: { eq: "texturizer-screenshots/5.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
       screenshot6: file(relativePath: { eq: "texturizer-screenshots/6.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
     }
@@ -81,23 +67,21 @@ export default () => {
         Content={() => (
           <div>
             <p>
-              <a href="https://texturizer.netlify.app/" target="blank">
+              <a href="https://texturizer.eliasjarzombek.com/" target="blank">
                 Texturizer
               </a>{' '}
               is a program that generates moving textures from random stock
               images.
             </p>
-            <p>
-              <iframe
-                title="Texturizer Screencapture"
-                src="https://player.vimeo.com/video/478046644?color=eae6de"
-                width="100%"
-                height="700"
-                frameborder="0"
-                allow="autoplay; fullscreen"
-                allowfullscreen
-              ></iframe>
-            </p>
+            <iframe
+              title="Texturizer Screencapture"
+              src="https://player.vimeo.com/video/478046644?color=eae6de"
+              width="100%"
+              height="700"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
             <p>
               It uses the{' '}
               <a href="https://source.unsplash.com/random">
@@ -112,38 +96,38 @@ export default () => {
               ¯\_(ツ)_/¯
             </p>
             <p>
-              <Img
-                fluid={screenshot1.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot1.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
             <p>
-              <Img
-                fluid={screenshot2.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot2.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
             <p>
-              <Img
-                fluid={screenshot3.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot3.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
             <p>
-              <Img
-                fluid={screenshot4.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot4.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
             <p>
-              <Img
-                fluid={screenshot5.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot5.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
             <p>
-              <Img
-                fluid={screenshot6.childImageSharp.fluid}
+              <GatsbyImage
+                image={screenshot6.childImageSharp.gatsbyImageData}
                 alt="screenshot of texturizer"
               />
             </p>
@@ -153,3 +137,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;

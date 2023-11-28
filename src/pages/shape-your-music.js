@@ -1,25 +1,21 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import starWarsVideo from '../video/sym-star-wars.mp4';
 
-export default () => {
+const Page = () => {
   const { bannerImage, screenshotImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "sym-banner-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       screenshotImage: file(relativePath: { eq: "sym-screenshot.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -61,13 +57,13 @@ export default () => {
                 Try it yourself!
               </a>
             </p>
-            <p className="MediaWrapper">
-              <Img
+            <figure>
+              <GatsbyImage
+                image={screenshotImage.childImageSharp.gatsbyImageData}
                 backgroundColor={'none'}
-                fluid={screenshotImage.childImageSharp.fluid}
                 style={{ borderRadius: 2 }}
               />
-            </p>
+            </figure>
 
             <h3>Features</h3>
             <p>
@@ -134,3 +130,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;

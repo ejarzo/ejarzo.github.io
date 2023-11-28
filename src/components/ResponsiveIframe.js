@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ src, title, ...rest }) => (
+const ResponsiveIframe = ({ src, title, ...rest }) => (
   <div class="iframe-container">
     <iframe
       class="responsive-iframe"
@@ -13,3 +13,5 @@ export default ({ src, title, ...rest }) => (
     ></iframe>
   </div>
 );
+
+export default ResponsiveIframe;

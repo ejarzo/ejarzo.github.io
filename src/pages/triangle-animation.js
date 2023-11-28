@@ -2,16 +2,14 @@ import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default () => {
+const Page = () => {
   const { bannerImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(
         relativePath: { eq: "triangle-animation-banner-2.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -51,3 +49,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;

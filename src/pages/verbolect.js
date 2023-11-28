@@ -1,37 +1,29 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default () => {
+const VerbolectPage = () => {
   const { bannerImage, image1, image2, image3 } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "verbolect-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image1: file(relativePath: { eq: "verbolect1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image2: file(relativePath: { eq: "verbolect2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       image3: file(relativePath: { eq: "verbolect4.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -41,6 +33,7 @@ export default () => {
     <div>
       <ProjectPage
         title="Verbolect"
+        subtitle="Multimedia Installation, 2017"
         description="A live-updating installation by Noncore Projector that explores a conversation between Cleverbot and itself"
         bannerImage={bannerImage}
         links={[
@@ -69,7 +62,7 @@ export default () => {
               .
             </p>
             <p>
-              This is a project by{' '}
+              <em>Verbolect</em> is the first project by{' '}
               <a href="https://www.facebook.com/verbolect/" target="blank">
                 NonCoreProjector
               </a>{' '}
@@ -87,7 +80,7 @@ export default () => {
               , multimedia artist Jack Colton, and myself)
             </p>
             <p>
-              Verbolect is visual exploration of a conversation between{' '}
+              <em>Verbolect</em> is visual exploration of a conversation between{' '}
               <a href="http://www.cleverbot.com/" target="blank">
                 Cleverbot
               </a>{' '}
@@ -99,8 +92,8 @@ export default () => {
               of "artificial" ones.
             </p>
 
-            <p className="MediaWrapper">
-              <Img fluid={image2.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image2.childImageSharp.gatsbyImageData} />
             </p>
 
             <p>
@@ -115,15 +108,15 @@ export default () => {
               </a>{' '}
               in Brooklyn.
             </p>
-            <p className="MediaWrapper">
-              <Img fluid={image1.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image1.childImageSharp.gatsbyImageData} />
             </p>
 
             <p>
               Below is one of the many streams that were recorded during the
               exhibition.
             </p>
-            <p className="MediaWrapper">
+            <p className="MediaWrapper wide">
               <div
                 style={{
                   padding: '56.25% 0 0 0',
@@ -147,8 +140,8 @@ export default () => {
               </div>
             </p>
 
-            <p className="MediaWrapper">
-              <Img fluid={image3.childImageSharp.fluid} />
+            <p className="MediaWrapper wide">
+              <GatsbyImage image={image3.childImageSharp.gatsbyImageData} />
             </p>
             <p>
               I wrote the main projection code, which as a web application that
@@ -198,3 +191,5 @@ export default () => {
     </div>
   );
 };
+
+export default VerbolectPage;

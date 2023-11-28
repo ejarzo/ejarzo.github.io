@@ -7,6 +7,10 @@ const typography = new Typography({
       styles: ['400', '700'],
     },
     {
+      name: 'DM Mono',
+      styles: ['400', '700'],
+    },
+    {
       name: 'Source Serif Pro',
       styles: ['400', '700'],
     },

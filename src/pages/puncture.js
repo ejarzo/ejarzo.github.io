@@ -1,31 +1,25 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import ResponsiveIframe from '../components/ResponsiveIframe';
 
-export default () => {
+const PuncturePage = () => {
   const { bannerImage, schematic, boxImg } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "puncture-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       boxImg: file(relativePath: { eq: "puncture-box-wireframe.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       schematic: file(relativePath: { eq: "puncture-system-diagram.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -59,7 +53,7 @@ export default () => {
               />
             </p>
 
-            <h2>Background</h2>
+            <h3>Background</h3>
             <p>
               This piece expands on Marcel's previous work entitled{' '}
               <a href="https://yiranwang.art/untitled">
@@ -91,11 +85,11 @@ export default () => {
               box) becomes the interface through which we create sound and
               music.
             </p>
-            <h2>Concept</h2>
+            <h3>Concept</h3>
             <p>
-              <Img
+              <GatsbyImage
+                image={boxImg.childImageSharp.gatsbyImageData}
                 alt="3D rendering of the box showing the paper face sandwiched in between the front rim of the box and the back"
-                fluid={boxImg.childImageSharp.fluid}
               />
             </p>
             <p>
@@ -107,9 +101,9 @@ export default () => {
               point."
             </p>
             <p>
-              <Img
+              <GatsbyImage
+                image={schematic.childImageSharp.gatsbyImageData}
                 alt="System diagram. Two boxes, each being recorded by two contact mics, connect to a computer. The first box has holes in the back through which pressure sensitive rods are inserted. Their pressure is used to generate sound"
-                fluid={schematic.childImageSharp.fluid}
               />
             </p>
             <p>
@@ -127,7 +121,7 @@ export default () => {
               the table and is played like a percussion instrument, using the
               box frame and paper surface to create texture and rhythm.
             </p>
-            <h2>Sound Design</h2>
+            <h3>Sound Design</h3>
             <p>
               The sound consists of a mixture of raw audio from the contact
               microphones and synthesized/recorded audio from Ableton Live. We
@@ -144,3 +138,5 @@ export default () => {
     </div>
   );
 };
+
+export default PuncturePage;

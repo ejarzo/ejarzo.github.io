@@ -1,30 +1,24 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default () => {
+const Page = () => {
   const { bannerImage, coverImage, exhibitionImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "tirtha-banner-2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       coverImage: file(relativePath: { eq: "tirtha-album-cover.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       exhibitionImage: file(relativePath: { eq: "tirtha-exhibition.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -37,11 +31,11 @@ export default () => {
         bannerImage={bannerImage}
         links={[
           {
-            label: 'Visit Exhibition (Venice)',
+            label: 'Exhibition',
             href: 'http://timespaceexistence.com/exhibition/',
           },
           {
-            label: 'View Design Project',
+            label: 'Design Project',
             href:
               'https://www.officeofuncertaintyresearch.org/tirtha-recomposting-temple-complex',
           },
@@ -52,18 +46,6 @@ export default () => {
         ]}
         Content={() => (
           <div>
-            <p className="border--dashed" style={{ padding: '1em' }}>
-              <Img
-                style={{ marginBottom: '1em' }}
-                fluid={exhibitionImage.childImageSharp.fluid}
-              />
-              You can see Tirtha in person at the{' '}
-              <a href="http://timespaceexistence.com/exhibition/">
-                TIME SPACE EXISTENCE
-              </a>{' '}
-              exhibition, which runs from May 22nd - Nov 21th, 2021 at the
-              Palazzo Bembo in Venice Italy.
-            </p>
             <p>
               <em>Tirtha: An Architectural Opera</em> is a cross-disciplinary,
               collaborative effort to present architecture as a multimedia
@@ -74,6 +56,18 @@ export default () => {
               , the project imagines a site-specific "Recomposting Center" — a
               burial place where human bodies are composted — through music,
               video, concept art, and architectural design.
+            </p>
+            <p className="border--dashed" style={{ padding: '1em' }}>
+              <GatsbyImage
+                image={exhibitionImage.childImageSharp.gatsbyImageData}
+                style={{ marginBottom: '1em' }}
+              />
+              Tirtha ran as part of the{' '}
+              <a href="http://timespaceexistence.com/exhibition/">
+                TIME SPACE EXISTENCE
+              </a>{' '}
+              exhibition, from May 22nd - Nov 21th, 2021 at the Palazzo Bembo in
+              Venice Italy.
             </p>
             <p>
               The Opera is presented virtually as a ~35 minute video made up of
@@ -127,9 +121,9 @@ export default () => {
               </em>
             </p>
             <p>
-              <Img
+              <GatsbyImage
+                image={coverImage.childImageSharp.gatsbyImageData}
                 style={{ maxWidth: 700, margin: '0 auto' }}
-                fluid={coverImage.childImageSharp.fluid}
               />
             </p>
             <p style={{ maxWidth: 700, margin: '0 auto' }}>
@@ -155,3 +149,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;

@@ -2,15 +2,14 @@ import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 // import Img from 'gatsby-image';
+import abcsGif from '../images/abcs-capture.gif';
 
-export default () => {
+const AbacusynthPluginPage = () => {
   const { bannerImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "abcs-screenshot-1-wide-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -19,20 +18,25 @@ export default () => {
   return (
     <div>
       <ProjectPage
-        title="Abacusynth (Ableton Plugin)"
+        title="Abacusynth (Plugin)"
+        subtitle="Max for Live Plugin, 2022"
         description="A plugin for Ableton Live inspired by an Abacus"
         bannerImage={bannerImage}
         links={[
           {
-            label: 'Download Free',
+            label: 'Download',
             href: 'https://eliasjarzombek.gumroad.com/l/abacusynth',
           },
           {
-            label: 'View User Guide',
+            label: 'User Guide',
             href: 'https://abacusynth.eliasjarzombek.com/m4l-manual/',
           },
           {
-            label: 'Listen to the Compilation',
+            label: 'Sample Pack',
+            href: 'https://jarz0.bandcamp.com/album/abacusynth-sample-pack',
+          },
+          {
+            label: 'Compilation',
             href: 'https://jarz0.bandcamp.com/album/abacusynth-compilation',
           },
         ]}
@@ -45,7 +49,9 @@ export default () => {
             </p>
             <p>
               If you don't have Ableton, check out the{' '}
-              <Link to="/abacusynth">Web Version</Link>.
+              <Link to="/abacusynth">Web Version</Link>. I've also built a{' '}
+              <Link to="/abacusynth-hardware">physical insturment</Link> based
+              on the same ideas.
             </p>
 
             <p className="MediaWrapper">
@@ -85,6 +91,12 @@ export default () => {
               new way of visualizing synthesis that makes it easy and fun to
               create rich timbres without having to fiddle with lots of knobs
               and sliders.
+            </p>
+            <p>
+              <img
+                style={{ display: 'block', margin: '0 auto' }}
+                src={abcsGif}
+              />
             </p>
 
             <p>
@@ -137,3 +149,5 @@ export default () => {
     </div>
   );
 };
+
+export default AbacusynthPluginPage;

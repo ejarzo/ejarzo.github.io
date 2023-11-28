@@ -4,14 +4,13 @@ import SiteWrapper from '../components/SiteWrapper.js';
 import SEO from '../components/seo.js';
 import HeaderV2 from '../components/headerV2.js';
 
-export default ({ data }) => {
+const Bio = ({ data }) => {
   return (
     <SiteWrapper>
       <SEO title="Bio" description="About me / contact info" />
       <HeaderV2 />
-
-      <div className="row">
-        <div className="col-6">
+      <div style={{ display: 'flex', gap: 60 }}>
+        <div style={{ flex: 1 }}>
           <p>
             Hello! I make things with sound, code and electronics, and am often
             inspired by geometry and natural patterns in my work.
@@ -43,6 +42,14 @@ export default ({ data }) => {
             </a>
             .
           </p>
+          <p>
+            In 2022 I graduated from <a href="https://itp.nyu.edu/itp/">ITP</a>{' '}
+            at NYU.
+          </p>
+          <p>
+            I'm currently helping build the future of creative exchange at{' '}
+            <a href="https://baton.media/">Baton</a>.
+          </p>
           {/* <p>
             Check out{' '}
             <a href="https://noncoreprojector.com" target="blank">
@@ -55,7 +62,7 @@ export default ({ data }) => {
             's latest release.
           </p> */}
         </div>
-        <div className="col-6">
+        <div style={{ flex: 1 }}>
           <p>
             Feel free to contact me at{' '}
             <span
@@ -88,13 +95,16 @@ export default ({ data }) => {
               Spotify
             </a>
             ,{' '}
-            <a
-              href="https://www.linkedin.com/profile/view?id=AAIAABf1guIBOB8T0pedXQTO32b_DkZc_k93L6E&amp;trk=nav_responsive_tab_profile"
-              target="blank"
-            >
-              LinkedIn
-            </a>
-            , and{' '}
+            <span style={{ display: 'inline-block' }}>
+              <a
+                href="https://www.linkedin.com/profile/view?id=AAIAABf1guIBOB8T0pedXQTO32b_DkZc_k93L6E&amp;trk=nav_responsive_tab_profile"
+                target="blank"
+              >
+                LinkedIn
+              </a>
+              ,
+            </span>{' '}
+            and{' '}
             <a href="https://twitter.com/jarz_0" target="blank">
               Twitter
             </a>
@@ -105,3 +115,5 @@ export default ({ data }) => {
     </SiteWrapper>
   );
 };
+
+export default Bio;

@@ -1,32 +1,26 @@
 import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default () => {
+const Page = () => {
   const { bannerImage, plantTypesImage, groundImage } = useStaticQuery(graphql`
-    query {
+    {
       bannerImage: file(relativePath: { eq: "musical-garden-banner-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       plantTypesImage: file(
         relativePath: { eq: "musical-garden-plant-types.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
         }
       }
       groundImage: file(relativePath: { eq: "musical-garden-ground.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -88,9 +82,9 @@ export default () => {
             <p>The musical garden invites exploration...</p>
             <h3>Plant Rules</h3>
             <p>
-              <Img
+              <GatsbyImage
+                image={plantTypesImage.childImageSharp.gatsbyImageData}
                 style={{ maxWidth: 400 }}
-                fluid={plantTypesImage.childImageSharp.fluid}
                 alt="Screenshot of four shapes: circle, square, equilateral triangle and right triangle"
               />
             </p>
@@ -107,9 +101,9 @@ export default () => {
               also attach audio effects specific to that area.
             </p>
             <p>
-              <Img
+              <GatsbyImage
+                image={groundImage.childImageSharp.gatsbyImageData}
                 style={{ maxWidth: '100%' }}
-                fluid={groundImage.childImageSharp.fluid}
                 alt="Screenshot of musical garden ground showing five distinct areas"
               />
             </p>
@@ -151,3 +145,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;

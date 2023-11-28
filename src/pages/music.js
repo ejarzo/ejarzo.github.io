@@ -4,9 +4,10 @@ import Link from 'gatsby-link';
 import SiteWrapper from '../components/SiteWrapper.js';
 import SEO from '../components/seo.js';
 import HeaderV2 from '../components/headerV2.js';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const obstacleLinks = [
-  { label: 'Website', href: 'https://obstaclemusic.com/' },
+  // { label: 'Website', href: 'https://obstaclemusic.com/' },
   { label: 'Bandcamp', href: 'https://obstaclemusic.bandcamp.com/' },
   {
     label: 'Spotify',
@@ -16,10 +17,10 @@ const obstacleLinks = [
     label: 'Apple Music',
     href: 'https://music.apple.com/us/artist/obstacle/1445718205',
   },
-  {
-    label: 'Soundcloud',
-    href: 'https://soundcloud.com/weareobstacle',
-  },
+  // {
+  //   label: 'Soundcloud',
+  //   href: 'https://soundcloud.com/weareobstacle',
+  // },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/obstaclemusic/',
@@ -59,8 +60,105 @@ const meLinks = [
   },
 ];
 
-export default () => {
+const MusicPage = () => {
+  const {
+    bannerImage,
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+  } = useStaticQuery(graphql`
+    {
+      bannerImage: file(relativePath: { eq: "texturizer-banner.png" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+    }
+  `);
   const entries = [
+    {
+      date: 'July 7, 2023',
+      title: 'Jarz0 — 123',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/track/123',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=905459827/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/track/123">123 by Jarz0</a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'June 23, 2023',
+      title: 'Custom Scenario — I/O',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/track/i-o-2',
+        },
+        {
+          label: 'Streaming',
+          href: 'https://distrokid.com/hyperfollow/customscenario/io',
+        },
+      ],
+      content: (
+        <div>
+          {/* <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=4103306717/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://customscenario.bandcamp.com/track/i-o-2">I/O by Custom Scenario</a></iframe> */}
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=4103306717/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/track/i-o-2">
+              I/O by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'April 21, 2023 ',
+      title: 'Custom Scenario — Got To Say',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/track/got-to-say',
+        },
+        {
+          label: 'Streaming',
+          href: 'https://distrokid.com/hyperfollow/customscenario/got-to-say',
+        },
+      ],
+      content: (
+        <div>
+          {/* <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=807345591/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://customscenario.bandcamp.com/track/got-to-say">Got to Say by Custom Scenario</a></iframe> */}
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=807345591/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/track/got-to-say">
+              Got To Say by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
     {
       date: 'August 2022',
       title: 'Custom Scenario — Live at Sonar Flare',
@@ -366,62 +464,126 @@ export default () => {
 
   return (
     <SiteWrapper>
+      {/* <div
+        className="Projects__ImgContainer"
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          overflow: 'hidden',
+          pointerEvents: 'none',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'var(--black)',
+          }}
+        >
+          <Img
+            fluid={bannerImage.childImageSharp.fluid}
+            style={{
+              userSelect: 'none',
+              objectFit: 'cover',
+              filter: 'blur(100px) brightness(0.6) saturate(0.8)',
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        </div>
+      </div> */}
       <SEO title="Music" description="My latest music" />
       <HeaderV2 />
-
-      <div className="row border--dashed" style={{ marginBottom: '2rem' }}>
-        <div className="col-12">
-          <p>
-            <strong style={{ fontSize: '1.5em' }}>Solo Work</strong>
-            <br />
+      {/* <h2 style={{ marginTop: 0 }}>Music</h2> */}
+      <div
+        className="row border--dashed"
+        style={{
+          marginBottom: '2rem',
+          maxWidth: 720,
+          margin: '0 auto',
+          background: 'var(--white)',
+          padding: '2px 40px',
+          borderRadius: 4,
+          // border: '1px solid var(--white)',
+          // color: 'var(--black)',
+          // paddingTop: '1em',
+        }}
+      >
+        <p>
+          <strong style={{ fontSize: '1.5em' }}>Solo Work</strong>
+          <br />
+          <div className="ProjectPage__Links" style={{ marginTop: 8 }}>
             {meLinks.map(({ label, href }, i) => (
-              <span>
-                <a href={href} target="blank">
-                  {label}
-                </a>
-                {i < meLinks.length - 1 && ' / '}
-              </span>
+              <a
+                className={`btn btn--inverted`}
+                target="blank"
+                key={label}
+                href={href}
+                rel="noopener noreferrer"
+              >
+                {label}
+              </a>
             ))}
-          </p>
-          <p>
-            <strong style={{ fontSize: '1.5em' }}>Obstacle</strong> (with{' '}
-            <a href="https://www.anniemurnighan.com/">Annie Murnighan</a> and{' '}
-            <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
-            {obstacleLinks.map(({ label, href }, i) => (
-              <span>
-                <a href={href} target="blank">
-                  {label}
-                </a>
-                {i < obstacleLinks.length - 1 && ' / '}
-              </span>
-            ))}
-          </p>
-          <p style={{ margin: 0 }}>
-            <strong style={{ fontSize: '1.5em' }}>Custom Scenario</strong> (with{' '}
-            <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
+          </div>
+        </p>
+        <p>
+          <strong style={{ fontSize: '1.5em' }}>Custom Scenario</strong> (with{' '}
+          <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
+          <div className="ProjectPage__Links" style={{ marginTop: 8 }}>
             {csLinks.map(({ label, href }, i) => (
-              <span>
-                <a href={href} target="blank">
-                  {label}
-                </a>
-                {i < csLinks.length - 1 && ' / '}
-              </span>
+              <a
+                className={`btn btn--inverted`}
+                target="blank"
+                key={label}
+                href={href}
+                rel="noopener noreferrer"
+              >
+                {label}
+              </a>
             ))}
-          </p>
-        </div>
+          </div>
+        </p>
+        <p>
+          <strong style={{ fontSize: '1.5em' }}>Obstacle</strong> (with{' '}
+          <a href="https://www.anniemurnighan.com/">Annie Murnighan</a> and{' '}
+          <a href="https://twitter.com/amos_copy">Amos Damroth</a>)<br />
+          <div className="ProjectPage__Links" style={{ marginTop: 8 }}>
+            {obstacleLinks.map(({ label, href }, i) => (
+              <a
+                className={`btn btn--inverted`}
+                target="blank"
+                key={label}
+                href={href}
+                rel="noopener noreferrer"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </p>
       </div>
 
       {entries.map(({ date, title, links, content }) => (
         <div className="row">
-          <div className="col-12">
+          <div className="col-12" style={{ marginBottom: 0 }}>
             <p
               class="text--monospace"
-              style={{ marginBottom: '1em', fontSize: '0.8em' }}
+              style={{ marginBottom: '8px', fontSize: '0.8em', opacity: 0.8 }}
             >
               {date}
             </p>
-            <h3 style={{ marginBottom: 0 }}>{title}</h3>
-            <p class="text--monospace text--uppercase">
+            <h3 style={{ marginTop: 0, marginBottom: 0 }}>{title}</h3>
+            <p
+              class="text--monospace text--uppercase"
+              style={{ marginTop: '8px' }}
+            >
               {links.map(({ label, href }, i) => (
                 <span>
                   <a href={href} target="blank">
@@ -431,7 +593,7 @@ export default () => {
                 </span>
               ))}
             </p>
-            {content}
+            <p>{content}</p>
           </div>
         </div>
       ))}
@@ -447,3 +609,5 @@ export default () => {
     </SiteWrapper>
   );
 };
+
+export default MusicPage;
