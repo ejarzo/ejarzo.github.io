@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import SiteWrapper from '../components/SiteWrapper';
-import SEO from '../components/seo.js';
+import Seo from '../components/seo.js';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import HeaderV2 from '../components/headerV2';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -80,7 +79,6 @@ const IndexPage = () => {
     vecTorBelBanner,
     verbolectBanner,
     symBanner,
-    fiberBanner,
     musicalGardenBanner,
     tirthaBanner,
     texturizerBanner,
@@ -149,11 +147,6 @@ const IndexPage = () => {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
-      fiberBanner: file(relativePath: { eq: "fiber-screenshot.png" }) {
-        childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-        }
-      }
       abacusynthBanner: file(relativePath: { eq: "abacusynth-banner.png" }) {
         childImageSharp {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
@@ -215,13 +208,13 @@ const IndexPage = () => {
       info: 'Synthesizer, 2022',
       to: '/abacusynth-hardware',
     },
-    {
-      title: 'Kishkindha NY',
-      imgFluid: kishkindhaBanner,
-      info: 'Music for Dance, 2023',
-      to: '/kishkindha-ny',
-      imgAttribution: 'Photo by Ludovica Stecher',
-    },
+    // {
+    //   title: 'Kishkindha NY',
+    //   imgFluid: kishkindhaBanner,
+    //   info: 'Music for Dance, 2023',
+    //   to: '/kishkindha-ny',
+    //   imgAttribution: 'Photo by Ludovica Stecher',
+    // },
     {
       title: 'Traversal',
       imgFluid: traversalBanner,
@@ -336,12 +329,12 @@ const IndexPage = () => {
   ];
 
   const [hoveredLink, setHoveredLink] = useState(links[0].to);
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
   const { imgAttribution } = links.find(l => l.to === hoveredLink) || {};
 
   return (
     <SiteWrapper>
-      <SEO title="Projects" description="My latest works" />
+      <Seo title="Projects" description="My latest works" />
       <HeaderV2 />
 
       <div className="ProjectsV2">
@@ -419,7 +412,7 @@ const IndexPage = () => {
             >
               More
             </button> */}
-            {showMore && (
+            {/* {showMore && (
               <ul style={{ marginTop: 50 }}>
                 {links
                   .filter(({ belowFold }) => belowFold)
@@ -427,7 +420,7 @@ const IndexPage = () => {
                     <ProjectLink {...linkInfo} projectIndex={i} />
                   ))}
               </ul>
-            )}
+            )} */}
             {/* <button>Show More</button> */}
           </div>
         </div>
