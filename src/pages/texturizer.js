@@ -16,37 +16,37 @@ const Page = () => {
     {
       bannerImage: file(relativePath: { eq: "texturizer-banner.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot1: file(relativePath: { eq: "texturizer-screenshots/1.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot2: file(relativePath: { eq: "texturizer-screenshots/2.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot3: file(relativePath: { eq: "texturizer-screenshots/3.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot4: file(relativePath: { eq: "texturizer-screenshots/4.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot5: file(relativePath: { eq: "texturizer-screenshots/5.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       screenshot6: file(relativePath: { eq: "texturizer-screenshots/6.png" }) {
         childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }

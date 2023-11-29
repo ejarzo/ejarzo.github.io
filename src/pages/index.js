@@ -102,145 +102,107 @@ const IndexPage = () => {
         relativePath: { eq: "triangle-animation-banner-2.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       texturizerBanner: file(relativePath: { eq: "texturizer-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       tirthaBanner: file(relativePath: { eq: "tirtha-banner-2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       musicalGardenBanner: file(
         relativePath: { eq: "musical-garden-banner-2.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       drumRadarBanner: file(relativePath: { eq: "drum-radar-banner-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       additiveSynthBanner: file(
         relativePath: { eq: "additive-synth-banner-2.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       vecTorBelBanner: file(relativePath: { eq: "vec-tor-bel-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       verbolectBanner: file(relativePath: { eq: "verbolect-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       symBanner: file(relativePath: { eq: "sym-banner-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       fiberBanner: file(relativePath: { eq: "fiber-screenshot.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       abacusynthBanner: file(relativePath: { eq: "abacusynth-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       punctureBanner: file(relativePath: { eq: "puncture-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       pendularBanner: file(relativePath: { eq: "pendular-banner-1.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       abacusynthPluginBanner: file(
         relativePath: { eq: "abcs-screenshot-1-wide-3.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       abacusynthHardwareBanner: file(
         relativePath: { eq: "abcs-hardware-banner.jpeg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       rltvBanner: file(relativePath: { eq: "rltv/rltv-banner.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 2400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       traversalBanner: file(relativePath: { eq: "traversal/Traversal1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 3400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       dwoBanner: file(relativePath: { eq: "dwo/dwo-banner.png" }) {
         childImageSharp {
-          fluid(maxWidth: 3400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
       kishkindhaBanner: file(
         relativePath: { eq: "kishkindha/kishkindha-banner-transformed.jpeg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 3400, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }
@@ -386,13 +348,42 @@ const IndexPage = () => {
         <div className="Projects__ImgContainer">
           {links.map(({ title, imgFluid, to }, i) => (
             <div className="Projects__ImgContainer__ImgWrapper" key={title}>
-              <Img
+              {/* <Img
                 className="background--full"
                 fluid={imgFluid.childImageSharp.fluid}
+               
+              /> */}
+              <GatsbyImage
+                loading={to === hoveredLink ? 'eager' : 'lazy'}
+                className="background--full"
+                image={imgFluid.childImageSharp.gatsbyImageData}
                 style={{
+                  position: 'absolute',
+                  zIndex: 0,
                   opacity: to === hoveredLink ? 1 : 0,
                 }}
               />
+              {/* <GatsbyImage
+                loading={to === hoveredLink ? 'eager' : 'lazy'}
+                className="background--full"
+                image={imgFluid.childImageSharp.gatsbyImageData}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  zIndex: 1,
+                  filter: 'blur(10px) brightness(0.8)',
+                  opacity: to === hoveredLink ? 1 : 0,
+                  mask: `linear-gradient(90deg,
+                  hsla(0, 0%, 0%, 0) 0%,
+                  hsla(0, 0%, 0%, 0.9) 23%,
+                  hsla(0, 0%, 0%, 0) 50%,
+                  hsla(0, 0%, 0%, 0) 100%
+                )`,
+                }}
+              /> */}
             </div>
           ))}
         </div>

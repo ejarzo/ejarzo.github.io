@@ -51,7 +51,10 @@ const Page = () => {
               exhibition during the 2023 Venice Architecture Biennale in Venice,
               Italy.
             </p>
-
+            <p>
+              I composed and recorded the original score for the 4 act
+              performance.
+            </p>
             <p>
               <em>
                 In this speculative-fiction work, Kishkindha NY reimagines New

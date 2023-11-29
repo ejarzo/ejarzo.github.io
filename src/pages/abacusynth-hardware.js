@@ -204,7 +204,6 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img1.childImageSharp.gatsbyImageData}
                 alt="Front view of Abacusynth: a wooden device holding four rods vertically. Each rod has a colored triangular object that can spin and be moved side to side"
               />
@@ -305,7 +304,6 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img6.childImageSharp.gatsbyImageData}
                 alt="Abacusynth with two of the spinners in motion"
               />
@@ -322,14 +320,12 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img2.childImageSharp.gatsbyImageData}
                 alt="Closeup shot of three of the rods and spinners"
               />
             </figure>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img3.childImageSharp.gatsbyImageData}
                 alt="Profile shot of the Abacusynth, showing four colored knobs on the side"
               />
@@ -344,14 +340,12 @@ const AbacusynthHardware = () => {
 
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img7.childImageSharp.gatsbyImageData}
                 alt="Closeup shot of the joint between the wooden wall and the rod"
               />
             </figure>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img9.childImageSharp.gatsbyImageData}
                 alt="Someone's hand turning the knob on the device"
               />
@@ -364,7 +358,6 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img5.childImageSharp.gatsbyImageData}
                 alt="Closeup of one of the spinners in motion"
               />
@@ -376,7 +369,6 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img8.childImageSharp.gatsbyImageData}
                 alt="Photo showing the middle section (holding the rods and spinners) removed from the outer section"
               />
@@ -394,7 +386,6 @@ const AbacusynthHardware = () => {
             </p>
             <figure>
               <GatsbyImage
-                objectFit={'contain'}
                 image={img4.childImageSharp.gatsbyImageData}
                 alt="closeup of the red spinner"
               />

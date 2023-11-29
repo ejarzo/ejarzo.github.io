@@ -5,6 +5,7 @@ module.exports = {
     author: `@jarz_0`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sharp`,
