@@ -94,6 +94,7 @@ const IndexPage = () => {
     traversalBanner,
     dwoBanner,
     kishkindhaBanner,
+    constellationBanner,
   } = useStaticQuery(graphql`
     query {
       triangleAnimationBanner: file(
@@ -192,7 +193,14 @@ const IndexPage = () => {
         }
       }
       kishkindhaBanner: file(
-        relativePath: { eq: "kishkindha/kishkindha-banner-transformed.jpeg" }
+        relativePath: { eq: "kishkindha/kishkindha-banner-3.jpeg" }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      constellationBanner: file(
+        relativePath: { eq: "constellation/constellation-banner-2.png" }
       ) {
         childImageSharp {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
@@ -208,13 +216,19 @@ const IndexPage = () => {
       info: 'Synthesizer, 2022',
       to: '/abacusynth-hardware',
     },
-    // {
-    //   title: 'Kishkindha NY',
-    //   imgFluid: kishkindhaBanner,
-    //   info: 'Music for Dance, 2023',
-    //   to: '/kishkindha-ny',
-    //   imgAttribution: 'Photo by Ludovica Stecher',
-    // },
+    {
+      title: 'Constellation',
+      imgFluid: constellationBanner,
+      info: 'Ableton Live Plugin, 2024',
+      to: '/constellation',
+    },
+    {
+      title: 'Kishkindha NY',
+      imgFluid: kishkindhaBanner,
+      info: 'Music for Dance, 2023',
+      to: '/kishkindha-ny',
+      imgAttribution: 'Photo by Ludovica Stecher',
+    },
     {
       title: 'Traversal',
       imgFluid: traversalBanner,
