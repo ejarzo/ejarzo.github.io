@@ -2,13 +2,35 @@ import React from 'react';
 import ProjectPage from '../components/ProjectPage';
 import { useStaticQuery, graphql } from 'gatsby';
 import ResponsiveIframe from '../components/ResponsiveIframe';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Page = () => {
-  const { bannerImage } = useStaticQuery(graphql`
+  const {
+    bannerImage,
+    image1,
+    image2,
+    image3,
+    image4,
+  } = useStaticQuery(graphql`
     {
       bannerImage: file(
         relativePath: { eq: "constellation/constellation-banner-2.png" }
       ) {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      image2: file(relativePath: { eq: "constellation/constellation-2.png" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      image3: file(relativePath: { eq: "constellation/constellation-3.png" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      image4: file(relativePath: { eq: "constellation/constellation-4.png" }) {
         childImageSharp {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
@@ -56,11 +78,32 @@ const Page = () => {
               height="315"
             />
             <p>
-              Use the shape editor to create and perform your sequences. Edges
+              Use the shape editor to create and perform sequences. Edges
               represent notes, and the angles at each corner determine the
-              musical interval between notes. Click on the keyboard to set the
-              starting note, or play with MIDI. The color is purely aesthetic
-              and is determined by the starting note.
+              musical interval between notes. Set the starting note by clicking
+              on the keyboard, or with MIDI input.
+            </p>
+            <figure style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <GatsbyImage
+                image={image3.childImageSharp.gatsbyImageData}
+                alt="Constellation"
+              />
+            </figure>
+            <p>
+              Stack multiple devices in parallel to produce complex rhythms and
+              harmonies. The color is purely aesthetic and is determined by the
+              starting note.
+            </p>
+            <figure style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <GatsbyImage
+                image={image4.childImageSharp.gatsbyImageData}
+                alt="Constellation"
+              />
+            </figure>
+            <p>
+              Stacking multiple devices in series allows the first device's
+              output to control the starting note of the next device. This
+              allows for more evolving patterns.
             </p>
           </div>
         )}

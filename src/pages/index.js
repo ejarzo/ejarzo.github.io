@@ -200,7 +200,7 @@ const IndexPage = () => {
         }
       }
       constellationBanner: file(
-        relativePath: { eq: "constellation/constellation-banner-2.png" }
+        relativePath: { eq: "constellation/constellation-banner-3.png" }
       ) {
         childImageSharp {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
