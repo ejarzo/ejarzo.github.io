@@ -73,7 +73,7 @@ const Page = () => {
             </p>
             {/* youtube embed */}
             <ResponsiveIframe
-              src="https://www.youtube.com/embed/oh9zTtGoyCw"
+              src="https://www.youtube.com/embed/d47NkPKMGOY"
               title="Constellation"
               height="315"
             />
