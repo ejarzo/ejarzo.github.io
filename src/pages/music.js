@@ -83,6 +83,33 @@ const MusicPage = () => {
   `);
   const entries = [
     {
+      date: 'Dec 13, 2024',
+      title: 'Custom Scenario — Treatments EP',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/album/treatments',
+        },
+        {
+          label: 'Streaming',
+          href: 'https://distrokid.com/hyperfollow/customscenario/treatments',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=1930129115/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/album/treatments-ep">
+              Treatments EP by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'July 7, 2023',
       title: 'Jarz0 — 123',
       links: [
