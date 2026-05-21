@@ -88,7 +88,7 @@ const Bio = ({ data }) => {
             </a>
             ,{' '}
             <a
-              href="https://open.spotify.com/artist/0Si7RnGwNEWeH1AhYgzyW4"
+              href="https://open.spotify.com/artist/6MecZLa2XKXWbPHBNCPgae?si=2cd9skOaQRC_-tiUINqBsg"
               target="blank"
             >
               {' '}
@@ -104,7 +104,10 @@ const Bio = ({ data }) => {
               </a>
               ,
             </span>{' '}
-            and{' '}
+            <a href="https://www.instagram.com/jarz_0/" target="blank">
+              Instagram
+            </a>
+            , and{' '}
             <a href="https://twitter.com/jarz_0" target="blank">
               Twitter
             </a>

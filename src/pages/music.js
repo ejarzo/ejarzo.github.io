@@ -48,7 +48,8 @@ const meLinks = [
   { label: 'Bandcamp', href: 'https://jarz0.bandcamp.com/' },
   {
     label: 'Spotify',
-    href: 'https://open.spotify.com/artist/0Si7RnGwNEWeH1AhYgzyW4',
+    href:
+      'https://open.spotify.com/artist/6MecZLa2XKXWbPHBNCPgae?si=2cd9skOaQRC_-tiUINqBsg',
   },
   {
     label: 'Apple Music',
@@ -83,6 +84,75 @@ const MusicPage = () => {
   `);
   const entries = [
     {
+      date: 'May 21, 2026',
+      title: 'Time Lapse',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/album/time-lapse',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=3511935603/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/album/time-lapse">
+              Time Lapse by Jarz0
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'Feb 20, 2026',
+      title: 'Custom Scenario — Depressurized',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://customscenario.bandcamp.com/album/depressurized',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=1102896443/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://customscenario.bandcamp.com/album/depressurized">
+              Depressurized by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'Jan 30, 2026',
+      title: 'Jarz0 — Static EP',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/album/static-ep',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=4274030742/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/album/static-ep">
+              Static EP by Jarz0
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'Dec 13, 2024',
       title: 'Custom Scenario — Treatments EP',
       links: [
@@ -104,6 +174,29 @@ const MusicPage = () => {
           >
             <a href="https://customscenario.bandcamp.com/album/treatments-ep">
               Treatments EP by Custom Scenario
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
+      date: 'Jan 5, 2024',
+      title: 'Jarz0 — Face It',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jarz0.bandcamp.com/track/face-it',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/track=164868995/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jarz0.bandcamp.com/track/face-it">
+              Face It by Jarz0
             </a>
           </iframe>
         </div>
