@@ -84,6 +84,29 @@ const MusicPage = () => {
   `);
   const entries = [
     {
+      date: 'June 12, 2026',
+      title: 'jim + bek — Cast Off / Clock In',
+      links: [
+        {
+          label: 'Bandcamp',
+          href: 'https://jimbek.bandcamp.com/album/cast-off-clock-in',
+        },
+      ],
+      content: (
+        <div>
+          <iframe
+            style={{ border: 0, width: '100%', height: 120 }}
+            src="https://bandcamp.com/EmbeddedPlayer/album=3081530673/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless
+          >
+            <a href="https://jimbek.bandcamp.com/album/cast-off-clock-in">
+              Cast Off / Clock In by jim + bek
+            </a>
+          </iframe>
+        </div>
+      ),
+    },
+    {
       date: 'May 21, 2026',
       title: 'Time Lapse',
       links: [
